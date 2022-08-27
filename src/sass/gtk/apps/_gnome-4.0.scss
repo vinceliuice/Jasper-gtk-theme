@@ -1,0 +1,92 @@
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd {
+  > stack, // GameMode setting
+  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
+  > box > stack > scrolledwindow > viewport > box {
+    > list {
+      // @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  stack stack stack frame, // ArcMenu setting
+  > stack > stack > box > frame, // Night Theme Switcher setting
+  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
+  > stack > box > stack > box > frame, // ArcMenu setting
+  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
+  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
+  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
+    > border { border: none; }
+
+    > list {
+      // @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  > stack > box > box > list,
+  > stack > box > stack > scrolledwindow > viewport > list { // ArcMenu setting sidebar
+    border-bottom-left-radius: $window-radius;
+  }
+
+  > stack > box > .sidebar > scrolledwindow > viewport > list {
+    padding: 0 0;
+  }
+}
+
+//
+// Calculator
+//
+
+.history-view { background-color: $base; }
+
+//
+// Contacts
+//
+
+.contacts-contact-list list.navigation-sidebar {
+  background: none;
+}
+
+.small .card {
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid $border;
+}
+
+//
+// Leaflets
+//
+
+window > contents > leaflet { // Gnome control center
+  > box > stack.background {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      transparent,
+                                      transparent $large-size,
+                                      $base $large-size,
+                                      $base);
+  }
+}
+
+//
+// dialogs
+//
+
+window.dialog {
+  > .dialog-vbox > box > scrolledwindow > viewport > widget {
+    > list.boxed-list {
+      border: none;
+      border-radius: 0;
+
+      > row {
+        &:first-child, &:last-child { border-radius: 0; }
+      }
+    }
+  }
+}
