@@ -69,8 +69,8 @@ window > contents > leaflet { // Gnome control center
     background-image: linear-gradient(to bottom,
                                       transparent,
                                       transparent $large-size,
-                                      $base $large-size,
-                                      $base);
+                                      $background $large-size,
+                                      $background);
   }
 }
 

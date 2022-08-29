@@ -264,7 +264,7 @@ entry {
       background-color: if($variant == 'light', $base, $fill);
       box-shadow: 0 1px 2px rgba(black, 0.05), 0 2px 3px rgba(black, 0.01), inset 0 1px highlight($background);
 
-      &:focus {
+      &:focus-within {
         box-shadow: 0 1px 2px rgba(black, 0.06), 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($background);
         background-color: if($variant == 'light', $base, rgba(white, 0.08));
       }
@@ -613,6 +613,8 @@ button {
     }
   }
 
+  &.toggle:checked row.activatable { color: on($primary); }
+
   .linked:not(.vertical) > &,
   .linked:not(.vertical) > &.image-button {
     @extend %linked;
@@ -639,9 +641,16 @@ button {
 
   // big standalone buttons like in Documents pager
   &.osd {
-    padding: ($large-size - 24px) / 2 ($large-size - 16px) / 2;
+    padding: ($medium-size - 24px) / 2 ($medium-size - 16px) / 2;
+    box-shadow: none;
+    background-color: $osd;
+    color: on($osd);
 
-    &.image-button { padding: ($large-size - 24px) / 2; }
+    &:hover { background-color: mix(on($osd), $osd, 15%); box-shadow: $shadow-z3; }
+
+    &:active { background-color: mix(on($osd), $osd, 25%); box-shadow: $shadow-z1; }
+
+    &.image-button { padding: ($medium-size - 24px) / 2; }
 
     &:disabled { opacity: 0; }
   }
@@ -1166,7 +1175,6 @@ spinbutton {
 /**************
  * ComboBoxes *
  **************/
-dropdown > popover.menu.background > contents { padding: 0; }
 
 dropdown > button > box {
   border-spacing: $space-size;
@@ -1197,7 +1205,7 @@ combobox {
    padding: 0;
 
    listview {
-     margin: $space-size 0;
+     margin: 0;
 
      & > row {
        padding: $space-size;
@@ -1540,7 +1548,7 @@ headerbar {
     box-shadow: 0 1px 2px rgba(black, 0.05), 0 2px 3px rgba(black, 0.01), inset 0 1px highlight($titlebar);
     background-color: lighten($titlebar, 6%);
 
-    &:focus {
+    &:focus-within {
       box-shadow: 0 1px 2px rgba(black, 0.06), 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($titlebar);
       background-color: lighten($titlebar, 6%);
     }
