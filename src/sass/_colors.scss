@@ -59,7 +59,7 @@
     @if ($theme == 'orange') { @return $orange-dark; }
     @if ($theme == 'yellow') { @return $yellow-dark; }
     @if ($theme == 'green') { @return $green-dark; }
-    @if ($theme == 'teal') { @return $teal-dark; }
+    @if ($theme == 'blue') { @return $blue-dark; }
     @if ($theme == 'grey') { @return $grey-600; }
   } @else {
     @if ($theme == 'default') { @return $default-light; }
@@ -69,7 +69,7 @@
     @if ($theme == 'orange') { @return $orange-light; }
     @if ($theme == 'yellow') { @return $yellow-light; }
     @if ($theme == 'green') { @return $green-light; }
-    @if ($theme == 'teal') { @return $teal-light; }
+    @if ($theme == 'blue') { @return $blue-light; }
     @if ($theme == 'grey') { @return $grey-200; }
   }
 }

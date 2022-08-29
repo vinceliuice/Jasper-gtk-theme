@@ -23,7 +23,7 @@ fi
 SASSC_OPT="-M -t expanded"
 
 THEME_NAME=Nephrite
-THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey')
+THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Blue' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
@@ -247,7 +247,7 @@ while [[ $# -gt 0 ]]; do
             themes+=("${THEME_VARIANTS[6]}")
             shift
             ;;
-          teal)
+          blue)
             themes+=("${THEME_VARIANTS[7]}")
             shift
             ;;
@@ -453,8 +453,8 @@ theme_color() {
       -Green)
         theme_color='green'
         ;;
-      -Teal)
-        theme_color='teal'
+      -Blue)
+        theme_color='blue'
         ;;
       -Grey)
         theme_color='grey'

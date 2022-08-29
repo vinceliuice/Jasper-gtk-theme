@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 
-for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
+for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Blue' '-Grey'; do
   for type in '' '-Nord' '-Dracula'; do
     case "$theme" in
       '')
-        theme_color_dark='#3c84f7'
-        theme_color_light='#5b9bf8'
+        theme_color_dark='#009688'
+        theme_color_light='#4db6ac'
         ;;
       -Purple)
         theme_color_dark='#AB47BC'
@@ -31,9 +31,9 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
         theme_color_dark='#4CAF50'
         theme_color_light='#66BB6A'
         ;;
-      -Teal)
-        theme_color_dark='#009688'
-        theme_color_light='#4DB6AC'
+      -Blue)
+        theme_color_dark='#3c84f7'
+        theme_color_light='#5b9bf8'
         ;;
       -Grey)
         theme_color_dark='#464646'
@@ -44,10 +44,11 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" == '-Nord' ]]; then
       panel_light='#f0f1f4'
       panel_dark='#1c1f26'
+
       case "$theme" in
         '')
-          theme_color_dark='#5e81ac'
-          theme_color_light='#89a3c2'
+          theme_color_dark='#63a6a5'
+          theme_color_light='#83b9b8'
           ;;
         -Purple)
           theme_color_dark='#b57daa'
@@ -73,9 +74,9 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           theme_color_dark='#82ac5d'
           theme_color_light='#a0c082'
           ;;
-        -Teal)
-          theme_color_dark='#63a6a5'
-          theme_color_light='#83b9b8'
+        -Blue)
+          theme_color_dark='#5e81ac'
+          theme_color_light='#89a3c2'
           ;;
         -Grey)
           theme_color_dark='#3a4150'
@@ -87,10 +88,11 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" == '-Dracula' ]]; then
       panel_light='#f0f1f4'
       panel_dark='#1c1e26'
+
       case "$theme" in
         '')
-          theme_color_dark='#a679ec'
-          theme_color_light='#bd93f9'
+          theme_color_dark='#20eed9'
+          theme_color_light='#50fae9'
           ;;
         -Purple)
           theme_color_dark='#a679ec'
@@ -116,9 +118,9 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           theme_color_dark='#4be772'
           theme_color_light='#50fa7b'
           ;;
-        -Teal)
-          theme_color_dark='#20eed9'
-          theme_color_light='#50fae9'
+        -Blue)
+          theme_color_dark='#a679ec'
+          theme_color_light='#bd93f9'
           ;;
         -Grey)
           theme_color_dark='#3c3f51'
@@ -130,16 +132,16 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
     if [[ "$type" != '' ]]; then
       rm -rf "thumbnail${theme}${type}.svg"
       cp -rf "thumbnail.svg" "thumbnail${theme}${type}.svg"
-      sed -i "s/#3c84f7/${theme_color_dark}/g" "thumbnail${theme}${type}.svg"
-      sed -i "s/#5b9bf8/${theme_color_light}/g" "thumbnail${theme}${type}.svg"
+      sed -i "s/#009688/${theme_color_dark}/g" "thumbnail${theme}${type}.svg"
+      sed -i "s/#4db6ac/${theme_color_light}/g" "thumbnail${theme}${type}.svg"
       sed -i "s/#f2f2f2/${panel_light}/g" "thumbnail${theme}${type}.svg"
       sed -i "s/#212121/${panel_dark}/g" "thumbnail${theme}${type}.svg"
       sed -i "s/thumbnail/thumbnail${theme}${type}/g" "thumbnail${theme}${type}.svg"
     elif [[ "$theme" != '' ]]; then
       rm -rf "thumbnail${theme}.svg"
       cp -rf "thumbnail.svg" "thumbnail${theme}.svg"
-      sed -i "s/#3c84f7/${theme_color_dark}/g" "thumbnail${theme}.svg"
-      sed -i "s/#5b9bf8/${theme_color_light}/g" "thumbnail${theme}.svg"
+      sed -i "s/#009688/${theme_color_dark}/g" "thumbnail${theme}.svg"
+      sed -i "s/#4db6ac/${theme_color_light}/g" "thumbnail${theme}.svg"
       sed -i "s/thumbnail/thumbnail${theme}/g" "thumbnail${theme}.svg"
     fi
   done
