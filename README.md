@@ -13,7 +13,9 @@
   - `gtk2-engines-murrine` on Debian, Ubuntu, etc.
 - `sassc` — build dependency
 
-- `Icon theme` [Colloid](https://github.com/vinceliuice/Colloid-icon-theme)
+- `Icon theme` [Colloid teal icon theme](https://github.com/vinceliuice/Colloid-icon-theme)
+
+- `Wallpaper` [Vimix wallpapers](https://github.com/vinceliuice/vimix-kde/tree/master/wallpaper)
 
 ## Installation
 
