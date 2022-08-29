@@ -51,13 +51,13 @@ OPTIONS:
 
   -n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|teal|grey|all] (Default: blue)
+  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
 
   -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants))
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
-  --tweaks                Specify versions for tweaks [nord|dracula|black|rimless|normal] (only nord and dracula can not mix use with!)
+  --tweaks                Specify versions for tweaks [nord|dracula|black] (only nord and dracula can not mix use with!)
                           1. nord:     Nord ColorScheme version
                           2. dracula   Dracula ColorScheme version
                           3. black:    Blackness color version
