@@ -1920,24 +1920,25 @@ popover.background {
 }
 
 notebook {
+  background-color: $base;
+
   frame > paned > & > header,
   &.frame > header { background-color: $fill; }
 
-  &, &.frame {
-    background-color: $base;
+  &.frame {
     border-radius: $small-size / 2 + $space-size * 1.5;
-  }
 
-  &.frame frame {
-    > border {
-      border: none;
-      border-radius: $small-size / 2 + $space-size / 2;
-    }
+    frame {
+      > border {
+        border: none;
+        border-radius: $small-size / 2 + $space-size / 2;
+      }
 
-    > list {
-      // @extend %circular_list;
+      > list {
+        // @extend %circular_list;
 
-      row.activatable { border-radius: $circular-radius; }
+        row.activatable { border-radius: $circular-radius; }
+      }
     }
   }
 
@@ -3914,16 +3915,16 @@ button.titlebutton:not(.suggested-action):not(.destructive-action) {
   @if $window_button == 'mac' {
     @extend %mac_window_button;
     .background.csd headerbar.titlebar.default-decoration & { @extend %firefox_window_button; }
+
+    .background.csd.maximized headerbar.titlebar.default-decoration &.maximize,
+    .background.csd.fullscreen headerbar.titlebar.default-decoration &.maximize,
+    .background.csd.tiled headerbar.titlebar.default-decoration &.maximize {
+      &:hover, &:active {
+        background-image: url("assets/scalable/unmaximize.svg");
+      }
+    }
   } @else {
     @extend %normal_window_button;
-  }
-
-  .background.csd.maximized headerbar.titlebar.default-decoration &.maximize,
-  .background.csd.fullscreen headerbar.titlebar.default-decoration &.maximize,
-  .background.csd.tiled headerbar.titlebar.default-decoration &.maximize {
-    &:hover, &:active {
-      background-image: url("assets/scalable/unmaximize.svg");
-    }
   }
 }
 

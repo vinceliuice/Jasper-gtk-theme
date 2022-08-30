@@ -36,10 +36,11 @@ Run the following commands in the terminal:
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
 
---tweaks                Specify versions for tweaks [nord|dracula|black] (only nord and dracula can not mix use with!)
+--tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
                         1. nord:     Nord ColorScheme version
                         2. dracula   Dracula ColorScheme version
                         3. black:    Blackness color version
+                        4. macos:    Macos style windows button
 
 -h, --help              Show help
 ```

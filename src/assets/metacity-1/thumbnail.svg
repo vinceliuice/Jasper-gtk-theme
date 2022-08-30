@@ -40,9 +40,9 @@
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:zoom="2.4135912"
-     inkscape:cx="71.263104"
-     inkscape:cy="113.10946"
+     inkscape:zoom="1.2067956"
+     inkscape:cx="304.93979"
+     inkscape:cy="127.61067"
      inkscape:window-x="0"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -56,31 +56,6 @@
   </sodipodi:namedview>
   <defs
      id="defs21">
-    <clipPath
-       id="clipPath1084">
-      <rect
-         x="6.35"
-         y="262.34"
-         width="26.458"
-         height="8.4667"
-         rx=".086816"
-         ry=".077982"
-         fill="#ffffff"
-         opacity=".15"
-         style="paint-order:stroke fill markers"
-         id="rect2" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath1121">
-      <rect
-         style="fill:#e6e6e6;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
-         id="rect1123"
-         width="26.458666"
-         height="8.466773"
-         x="6.0849934"
-         y="6.6146665" />
-    </clipPath>
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
@@ -250,5 +225,118 @@
        ry="0.13229333"
        style="opacity:0.65;fill:#000000;stroke-width:0.264587;paint-order:stroke fill markers"
        id="rect746" />
+  </g>
+  <g
+     id="thumbnail-Dark-macos"
+     transform="translate(38.629653)">
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="rect320"
+       width="26.458666"
+       height="8.466773"
+       x="6.0849934"
+       y="20.902346" />
+    <g
+       id="g328"
+       clip-path="url(#clipPath2484)"
+       transform="translate(0,14.28768)">
+      <rect
+         style="opacity:1;fill:#000000;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1702)"
+         id="rect322"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="8.2021866"
+         rx="3.17504"
+         ry="3.17504" />
+      <rect
+         style="fill:#2c2c2c;fill-opacity:1;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round"
+         id="rect324"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="7.6730132"
+         rx="3.17504"
+         ry="3.17504" />
+      <path
+         id="path326"
+         style="opacity:0.1;fill:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+         d="M 16,29 C 9.352,29 4,34.352 4,41 v 1 C 4,35.352 9.352,30 16,30 h 91 c 6.648,0 12,5.352 12,12 v -1 c 0,-6.648 -5.352,-12 -12,-12 z"
+         transform="matrix(0.26458667,0,0,0.26458667,-5e-4,0)" />
+    </g>
+    <circle
+       style="opacity:1;fill:#fd5f51;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle330"
+       cx="26.561939"
+       cy="25.66497"
+       r="2.1166933" />
+    <circle
+       style="opacity:1;fill:#38c76a;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle332"
+       cx="19.311424"
+       cy="25.66497"
+       r="2.1166933" />
+    <circle
+       style="opacity:1;fill:#fdbe04;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle334"
+       cx="12.060911"
+       cy="25.66497"
+       r="2.1166933" />
+  </g>
+  <g
+     id="thumbnail-macos"
+     transform="translate(38.629653)">
+    <rect
+       style="fill:#e6e6e6;stroke-width:0.435626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"
+       id="rect344"
+       width="26.458666"
+       height="8.466773"
+       x="6.0849934"
+       y="6.6146665" />
+    <g
+       id="g352"
+       clip-path="url(#clipPath2484)">
+      <rect
+         style="opacity:0.35;fill:#000000;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round;filter:url(#filter1702)"
+         id="rect346"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="8.2021866"
+         rx="3.17504"
+         ry="3.17504" />
+      <rect
+         style="fill:#f2f2f2;fill-opacity:1;stroke-width:0.529173;stroke-linecap:round;stroke-linejoin:round"
+         id="rect348"
+         width="30.427467"
+         height="11.9064"
+         x="1.057846"
+         y="7.6730132"
+         rx="3.17504"
+         ry="3.17504" />
+      <path
+         id="path350"
+         style="fill:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+         d="M 16,29 C 9.352,29 4,34.352 4,41 v 1 C 4,35.352 9.352,30 16,30 h 91 c 6.648,0 12,5.352 12,12 v -1 c 0,-6.648 -5.352,-12 -12,-12 z"
+         transform="matrix(0.26458667,0,0,0.26458667,-5e-4,0)" />
+    </g>
+    <circle
+       style="opacity:1;fill:#fd5f51;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle354"
+       cx="26.561939"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="opacity:1;fill:#38c76a;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle356"
+       cx="19.311424"
+       cy="11.37729"
+       r="2.1166933" />
+    <circle
+       style="opacity:1;fill:#fdbe04;fill-opacity:1;stroke-width:2.11669;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="circle358"
+       cx="12.060911"
+       cy="11.37729"
+       r="2.1166933" />
   </g>
 </svg>

@@ -8,9 +8,10 @@ INDEX="assets.txt"
 for i in `cat $INDEX`; do
   for color in '' '-Light'; do
     for theme in '' '-Nord' '-Dracula'; do
+      for window in '' '-Macos'; do
         for screen in '' '-hdpi' '-xhdpi'; do
-          ASSETS_DIR="assets${color}${theme}${screen}"
-          SRC_FILE="assets${color}${theme}.svg"
+          ASSETS_DIR="assets${color}${theme}${window}${screen}"
+          SRC_FILE="assets${color}${theme}${window}.svg"
 
           case "${screen}" in
             -hdpi)
@@ -38,6 +39,7 @@ for i in `cat $INDEX`; do
               && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
           fi
         done
+      done
     done
   done
 done

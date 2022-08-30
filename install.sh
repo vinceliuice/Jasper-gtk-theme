@@ -57,10 +57,11 @@ OPTIONS:
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
-  --tweaks                Specify versions for tweaks [nord|dracula|black] (only nord and dracula can not mix use with!)
+  --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
                           1. nord:     Nord ColorScheme version
                           2. dracula   Dracula ColorScheme version
                           3. black:    Blackness color version
+                          4. macos:    Macos style windows button
 
   -h, --help              Show help
 EOF
@@ -73,6 +74,7 @@ install() {
   local color="${4}"
   local size="${5}"
   local ctype="${6}"
+  local window="${7}"
 
   [[ "${color}" == '-Light' ]] && local ELSE_LIGHT="${color}"
   [[ "${color}" == '-Dark' ]] && local ELSE_DARK="${color}"
@@ -140,20 +142,20 @@ install() {
   cp -r "${SRC_DIR}/assets/cinnamon/thumbnails/thumbnail${theme}${ctype}${color}.png"        "${THEME_DIR}/cinnamon/thumbnail.png"
 
   mkdir -p                                                                                   "${THEME_DIR}/metacity-1"
-  cp -r "${SRC_DIR}/main/metacity-1/metacity-theme-3.xml"                                    "${THEME_DIR}/metacity-1/metacity-theme-3.xml"
-  cp -r "${SRC_DIR}/assets/metacity-1/assets"                                                "${THEME_DIR}/metacity-1/assets"
+  cp -r "${SRC_DIR}/main/metacity-1/metacity-theme-3${window}.xml"                           "${THEME_DIR}/metacity-1/metacity-theme-3.xml"
+  cp -r "${SRC_DIR}/assets/metacity-1/assets${window}"                                       "${THEME_DIR}/metacity-1/assets"
   cp -r "${SRC_DIR}/assets/metacity-1/thumbnail${ELSE_DARK:-}.png"                           "${THEME_DIR}/metacity-1/thumbnail.png"
   cd "${THEME_DIR}/metacity-1" && ln -s metacity-theme-3.xml metacity-theme-1.xml && ln -s metacity-theme-3.xml metacity-theme-2.xml
 
   mkdir -p                                                                                   "${THEME_DIR}/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}/"*.png                        "${THEME_DIR}/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}/"*.png               "${THEME_DIR}/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-hdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}-hdpi/"*.png                   "${THEME_DIR}-hdpi/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-hdpi/"*.png          "${THEME_DIR}-hdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-hdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=9/"                                                "${THEME_DIR}-hdpi/xfwm4/themerc"
   mkdir -p                                                                                   "${THEME_DIR}-xhdpi/xfwm4"
-  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}-xhdpi/"*.png                  "${THEME_DIR}-xhdpi/xfwm4"
+  cp -r "${SRC_DIR}/assets/xfwm4/assets${ELSE_LIGHT:-}${ctype}${window}-xhdpi/"*.png         "${THEME_DIR}-xhdpi/xfwm4"
   cp -r "${SRC_DIR}/main/xfwm4/themerc${ELSE_LIGHT:-}"                                       "${THEME_DIR}-xhdpi/xfwm4/themerc"
   sed -i "s/button_offset=6/button_offset=12/"                                               "${THEME_DIR}-xhdpi/xfwm4/themerc"
 
@@ -315,6 +317,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "Install Blackness version! ..."
             shift
             ;;
+          macos)
+            macos="true"
+            window="-Macos"
+            echo -e "Macos window button version! ..."
+            shift
+            ;;
           -*)
             break
             ;;
@@ -422,6 +430,10 @@ blackness_color() {
   sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
+macos_winbutton() {
+  sed -i "/\$window_button:/s/normal/mac/" ${SRC_DIR}/sass/_tweaks-temp.scss
+}
+
 gnome_shell_version() {
   cp -rf ${SRC_DIR}/sass/gnome-shell/_common.scss ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
 
@@ -484,6 +496,10 @@ theme_tweaks() {
 
   if [[ "$blackness" = "true" ]] ; then
     blackness_color
+  fi
+
+  if [[ "$macos" = "true" ]] ; then
+    macos_winbutton
   fi
 }
 
@@ -549,8 +565,8 @@ install_theme() {
   for theme in "${themes[@]}"; do
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
-        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
-        make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+        install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
       done
     done
   done
