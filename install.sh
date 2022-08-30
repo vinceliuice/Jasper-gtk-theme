@@ -57,6 +57,8 @@ OPTIONS:
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
+  -u, --uninstall         Uninstall themes or link for libadwaita [theme|libadwaita] (Default: theme option)
+
   --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
                           1. nord:     Nord ColorScheme version
                           2. dracula   Dracula ColorScheme version

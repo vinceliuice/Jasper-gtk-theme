@@ -31,10 +31,16 @@ Run the following commands in the terminal:
 
 ```
 -d, --dest DIR          Specify destination directory (Default: ~/.themes)
+
 -n, --name NAME         Specify theme name (Default: Nephrite)
+
 -t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
+
 -c, --color VARIANT...  Specify color variant(s) [standard|light|dark] (Default: All variants)
+
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
+
+-u, --uninstall         Uninstall themes or link for libadwaita [theme|libadwaita] (Default: theme option)
 
 --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
                         1. nord:     Nord ColorScheme version
