@@ -1248,6 +1248,7 @@ searchbar > revealer > box {
         &:checked {
           background-color: rgba(white, 0.15);
           color: $titlebar-text;
+          box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
         }
       }
     }
@@ -3691,7 +3692,7 @@ colorchooser .popover.osd {
 decoration {
   transition: $transition-shadow;
   border-radius: $window-radius;
-  background-color: $background;
+  // background-color: $background;
 
   @if $rimless == 'true' {
     box-shadow: $shadow-z16, 0 0 36px transparent;
