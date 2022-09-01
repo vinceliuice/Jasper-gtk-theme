@@ -2052,7 +2052,7 @@ popover.background {
     } @else {
       border: 1px solid highlight($surface);
       background-clip: border-box;
-      box-shadow: 0 0 0 1px $window-border, $shadow-z5;
+      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
     }
 
     &:backdrop {
@@ -3904,6 +3904,7 @@ stacksidebar {
       background-color: $overlay-selected;
       color: $text;
       font-weight: 500;
+      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
     }
 
     + row { margin-top: 4px; }
@@ -3960,6 +3961,7 @@ separator.sidebar {
     &:selected {
       background-color: $overlay-selected;
       color: $text;
+      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
 
       &:hover {
         background-color: $overlay-focus-hover;
@@ -3997,6 +3999,7 @@ placessidebar.sidebar {
     &:selected {
       background-color: $divider;
       font-weight: 500;
+      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
 
       // &, image.sidebar-icon, button.sidebar-button { color: $text; }
     }
@@ -4378,68 +4381,67 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 window {
-  &.csd {
-    transition: $transition-shadow;
-    border-radius: $window-radius;
+  outline: none;
+  transition: $transition-shadow;
+  border-radius: $window-radius;
 
-    &.background {
-      background-color: transparent;
-      background-image: linear-gradient(to bottom,
-                                        $titlebar,
-                                        $titlebar $large-size,
-                                        $background $large-size,
-                                        $background);
-    }
-
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z16, 0 0 36px transparent, inset 0 1px highlight($titlebar);
-      outline: none;
-    } @else {
-      box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
-      outline-color: highlight($background);
-      outline-offset: -1px;
-      outline-style: solid;
-      outline-width: 1px;
-    }
-
-    &:backdrop {
-      // the transparent shadow here is to enforce that the shadow extents don't
-      // change when we go to backdrop, to prevent jumping windows.
-      // The biggest shadow should be in the same order then in the active state
-      // or the jumping will happen during the transition.
-      @if $rimless == 'true' {
-        box-shadow: $shadow-z4, 0 0 36px transparent;
-      } @else {
-        box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
-      }
-    }
-
-    &.popup {
-      border-radius: $menu-radius;
-    }
-
-    &.dialog.message {
-      border-radius: $window-radius;
-    }
-
-    .solid-csd & {
-      margin: 0;
-      padding: 2px;
-      border-radius: 0;
-      background-color: $titlebar;
-      border: 1px solid $solid-border;
-
-      &:backdrop { background-color: $titlebar-backdrop; }
-    }
-
-    &.maximized,
-    &.fullscreen,
-    &.tiled,
-    &.tiled-top,
-    &.tiled-right,
-    &.tiled-bottom,
-    &.tiled-left { border-radius: 0; }
+  &.background {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,
+                                      $titlebar,
+                                      $titlebar $large-size,
+                                      $background $large-size,
+                                      $background);
   }
+
+  @if $rimless == 'true' {
+    box-shadow: $shadow-z16, 0 0 36px transparent, inset 0 1px highlight($titlebar);
+    outline: none;
+  } @else {
+    box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
+    outline-color: highlight($background);
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-width: 1px;
+  }
+
+  &:backdrop {
+    // the transparent shadow here is to enforce that the shadow extents don't
+    // change when we go to backdrop, to prevent jumping windows.
+    // The biggest shadow should be in the same order then in the active state
+    // or the jumping will happen during the transition.
+    @if $rimless == 'true' {
+      box-shadow: $shadow-z4, 0 0 36px transparent;
+    } @else {
+      box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
+    }
+  }
+
+  &.popup {
+    border-radius: $menu-radius;
+  }
+
+  &.dialog.message {
+    border-radius: $window-radius;
+  }
+
+  .solid-csd & {
+    margin: 0;
+    padding: 2px;
+    border-radius: 0;
+    background-color: $titlebar;
+    border: 1px solid $solid-border;
+
+    &:backdrop { background-color: $titlebar-backdrop; }
+  }
+
+  &.maximized,
+  &.fullscreen,
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left { border-radius: 0; }
 }
 
 // Windows button
@@ -4633,7 +4635,6 @@ shortcut > .keycap {
 stackswitcher {
   min-height: 0;
   padding: $space-size / 2;
-  margin: $space-size 0;
   border-radius: $circular-radius;
   background-color: $fill;
   border: none;
@@ -4652,7 +4653,7 @@ stackswitcher {
       transition: $transition;
       background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
       color: $text;
-      box-shadow: 0 1px 3px rgba(black, 0.06);
+      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
     }
   }
 
@@ -4719,7 +4720,10 @@ button.emoji-section {
   border-radius: $corner-radius;
 
   &:checked {
-    color: $primary;
+    &, &:hover {
+      background-color: transparent;
+      background-image: image($primary);
+    }
   }
 }
 

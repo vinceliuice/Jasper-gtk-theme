@@ -580,7 +580,7 @@ install_theme() {
 
 if [[ "$uninstall" == 'true' ]]; then
   if [[ "$libadwaita" == 'true' ]]; then
-    "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
+    echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
     uninstall_link
   else
     echo && uninstall_theme && uninstall_link
