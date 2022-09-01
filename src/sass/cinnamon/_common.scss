@@ -1660,6 +1660,10 @@ $sub_menu_bg: mix($text, $popover, 10%);
 
   &-thumbnail-menu {
     padding: $space-size;
+    margin: $space-size;
+    background-color: $popover;
+    box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($popover);
+    border-radius: $window-radius;
 
     .item-box {
       padding: $space-size;

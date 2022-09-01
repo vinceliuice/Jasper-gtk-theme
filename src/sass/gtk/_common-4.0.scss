@@ -4523,6 +4523,7 @@ window {
     &:hover {
       color: $titlebar-text;
       background-color: gtkalpha(currentColor, 0.15);
+      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
     }
 
     &:active {
