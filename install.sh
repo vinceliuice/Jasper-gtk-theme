@@ -22,7 +22,7 @@ fi
 
 SASSC_OPT="-M -t expanded"
 
-THEME_NAME=Nephrite
+THEME_NAME=Jasper
 THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Blue' '-Grey')
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')

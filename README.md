@@ -1,6 +1,6 @@
 ## Nephrite gtk theme
 
-![Nephrite](preview.png?raw=true)
+![Jasper](preview.png?raw=true)
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Run the following commands in the terminal:
 ```
 -d, --dest DIR          Specify destination directory (Default: ~/.themes)
 
--n, --name NAME         Specify theme name (Default: Nephrite)
+-n, --name NAME         Specify theme name (Default: Jasper)
 
 -t, --theme VARIANT...  Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
 
