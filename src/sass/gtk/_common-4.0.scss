@@ -17,6 +17,10 @@ dnd {
 
 .large-icons {
   -gtk-icon-size: 32px;
+
+  .aboutdialog & {
+    -gtk-icon-size: 128px;
+  }
 }
 
 spinner:disabled,
@@ -584,31 +588,10 @@ button {
   }
 
   &.card {
-    background-color: $fill;
+    background-color: $button;
     background-clip: padding-box;
     font-weight: inherit;
     padding: 0;
-
-    &:hover {
-      background-image: image(gtkalpha(currentColor, 0.03));
-    }
-
-    &.keyboard-activating,
-    &:active {
-      background-image: image(gtkalpha(currentColor, 0.08));
-    }
-
-    &:checked {
-      background-color: $fill;
-      background-image: image(gtkalpha(currentColor, 0.1));
-
-      &:hover { background-image: image(gtkalpha(currentColor, 0.13)); }
-
-      &.keyboard-activating,
-      &:active { background-image: image(gtkalpha(currentColor, 0.19)); }
-
-      &.has-open-popup { background-image: image(gtkalpha(currentColor, 0.13)); }
-    }
 
     &:drop(active) {
       color: $drop_target_color;
@@ -1332,6 +1315,7 @@ toolbar {
     border-radius: $corner-radius;
     box-shadow: $shadow-z4, inset 0 1px highlight($surface);
     background-color: $surface;
+    color: $text-secondary;
 
     &:backdrop { box-shadow: $shadow-z2, inset 0 1px highlight($surface); }
 
@@ -3614,6 +3598,7 @@ columnview {
   border-spacing: $space-size * 1.5;
   padding: $space-size * 1.5;
   border: none;
+  background-image: none;
 
   button {
     @extend %button-flat;
