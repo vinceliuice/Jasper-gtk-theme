@@ -785,10 +785,10 @@ window.background.csd {
 
 tabbox { // Gnome 40.0
   border: none;
-  background-color: $fill;
+  background-color: $base;
   padding: $space-size / 2;
-  margin: $space-size / 2;
-  border-radius: $modal-radius + $space-size / 2;
+  // margin: 0;
+  // border-radius: 0;
 
   > tab {
     @extend %tabs_tab;
@@ -1554,6 +1554,12 @@ window.background { // gnome-terminal 3.32 setting
         border-bottom-right-radius: $window-radius;
       }
     }
+  }
+}
+
+.terminal-window {
+  tabar { // gnome-console
+    background-color: $base;
   }
 }
 
