@@ -1388,7 +1388,7 @@ searchbar > revealer > box {
 
   &:focus, &:hover, &:active, &:checked { color: $titlebar-text; }
 
-  &:disabled { color: $titlebar-text-secondary-disabled; }
+  &:disabled { color: $titlebar-text-disabled; }
 
   &:checked {
     &:disabled {
@@ -1414,7 +1414,7 @@ searchbar > revealer > box {
 
 %titlebar-entry {
   background-color: $titlebar-fill;
-  color: $titlebar-text;
+  color: $titlebar-text-secondary;
 
   &:disabled {
     background-color: $titlebar-fill;
@@ -1569,7 +1569,13 @@ headerbar {
   @if $variant == 'light' and $topbar == 'dark' {
     popover.background {
       > contents {
-        button:not(.suggested-action):not(.destructive-action) { color: $text-secondary; }
+        button:not(.suggested-action):not(.destructive-action) {
+          color: $text-secondary;
+
+          &:disabled { color: $text-secondary-disabled; }
+        }
+
+        .dim-label { color: $text-disabled; }
       }
     }
   }
