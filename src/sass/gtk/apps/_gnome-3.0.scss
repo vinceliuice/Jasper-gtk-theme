@@ -22,6 +22,7 @@ $nautilus-item-radius: $window-radius - $space-size;
 
     &.unified headerbar {
       background: none;
+      box-shadow: none;
     }
 
     > grid.horizontal > paned.horizontal > separator,
