@@ -791,11 +791,12 @@ window.background.csd {
  ************************/
 
 tabbox { // Gnome 40.0
-  border: none;
-  background-color: $base;
+  background-color: $base-alt;
+  margin: 0;
   padding: $space-size / 2;
-  // margin: 0;
-  // border-radius: 0;
+  border-radius: 0;
+  border-bottom: 1px solid $border;
+  background-clip: border-box;
 
   > tab {
     @extend %tabs_tab;
@@ -1565,7 +1566,7 @@ window.background { // gnome-terminal 3.32 setting
 }
 
 .terminal-window {
-  tabar { // gnome-console
+  tabbar { // gnome-console
     background-color: $base;
   }
 }
