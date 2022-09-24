@@ -129,6 +129,12 @@ app-context-bar {
   }
 }
 
+screenshot-carousel {
+  > stack > .frame.view {
+    margin: $space-size $space-size * 2;
+  }
+}
+
 //
 // Leaflets
 //
