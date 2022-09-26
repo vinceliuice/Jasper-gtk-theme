@@ -1536,6 +1536,7 @@ terminal-window {
         min-height: $small-size;
         min-width: $small-size;
         padding: $space-size / 2;
+        border-radius: $circular-radius;
       }
     }
   }
