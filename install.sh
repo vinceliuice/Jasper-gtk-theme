@@ -57,7 +57,10 @@ OPTIONS:
 
   -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
-  -u, --uninstall         Uninstall themes or link for libadwaita [theme|libadwaita] (Default: theme option)
+  -l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
 
   --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
                           1. nord:     Nord ColorScheme version
@@ -187,6 +190,14 @@ while [[ $# -gt 0 ]]; do
     -n|--name)
       name="${2}"
       shift 2
+      ;;
+    -r|--remove|-u|--uninstall)
+      uninstall="true"
+      shift
+      ;;
+    -l|--libadwaita)
+      libadwaita="true"
+      shift
       ;;
     -c|--color)
       shift
@@ -330,29 +341,6 @@ while [[ $# -gt 0 ]]; do
             ;;
           *)
             echo "ERROR: Unrecognized tweaks variant '$1'."
-            echo "Try '$0 --help' for more information."
-            exit 1
-            ;;
-        esac
-      done
-      ;;
-    -u|--uninstall)
-      uninstall="true"
-      shift
-      for variant in "$@"; do
-        case "$variant" in
-          theme)
-            libadwaita="false"
-            ;;
-          libadwaita)
-            libadwaita="true"
-            shift
-            ;;
-          -*)
-            break
-            ;;
-          *)
-            echo "ERROR: Unrecognized uninstall variant '${1:-}'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -586,7 +574,10 @@ if [[ "$uninstall" == 'true' ]]; then
     echo && uninstall_theme && uninstall_link
   fi
 else
-   install_package && tweaks_temp && gnome_shell_version && install_theme && uninstall_link && link_theme
+  install_package && tweaks_temp && gnome_shell_version && install_theme
+  if [[ "$libadwaita" == 'true' ]]; then
+    uninstall_link && link_theme
+  fi
 fi
 
 echo
