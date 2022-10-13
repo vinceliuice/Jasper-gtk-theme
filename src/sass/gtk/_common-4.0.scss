@@ -1448,12 +1448,12 @@ headerbar {
   }
 
   .title {
-    padding: 0 12px;
+    padding: 0 $space-size * 2;
     font-weight: bold;
   }
 
   .subtitle {
-    padding: 0 12px;
+    padding: 0 $space-size * 2;
     font-size: smaller;
   }
 
@@ -1469,6 +1469,7 @@ headerbar {
   .titlebar {
     background-color: transparent;
     box-shadow: none;
+    background-image: none;
   }
 
   // The separator for split headerbars
@@ -1496,6 +1497,7 @@ headerbar {
   entry,
   spinbutton,
   button,
+  menubutton,
   stackswitcher,
   separator {
     margin-top: $space-size;
@@ -1504,7 +1506,8 @@ headerbar {
 
   menubutton > button,
   spinbutton > button,
-  splitbutton > button {
+  splitbutton > button,
+  splitbutton > menubutton {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -1529,9 +1532,21 @@ headerbar {
     @extend %titlebar-entry;
   }
 
+  entry {
+    box-shadow: inset 0 0 0 2px transparent, inset 0 1px highlight($titlebar);
+
+    &:hover {
+      box-shadow: inset 0 0 0 2px $overlay-hover, inset 0 1px highlight($titlebar);
+    }
+  }
+
   entry.search {
     box-shadow: 0 1px 2px rgba(black, 0.05), 0 2px 3px rgba(black, 0.01), inset 0 1px highlight($titlebar);
     background-color: lighten($titlebar, 6%);
+
+    &:hover {
+      box-shadow: 0 1px 2px rgba(black, 0.05), 0 2px 3px rgba(black, 0.06), inset 0 1px highlight($titlebar);
+    }
 
     &:focus-within {
       box-shadow: 0 1px 2px rgba(black, 0.06), 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($titlebar);
@@ -3749,7 +3764,10 @@ calendar {
  * Dialogs *
  ***********/
 window.dialog.message { // Message Dialog styling
-  &.background { background-color: $surface; }
+  &.background, &:backdrop {
+    background-color: $surface;
+    background-image: none;
+  }
 
   box.dialog-vbox.vertical {
     border-spacing: 10px;
@@ -3770,10 +3788,13 @@ window.dialog.message { // Message Dialog styling
 
   .dialog-action-area {
     margin-top: -$space-size;
-    // padding: $space-size;
+    padding: $space-size;
+    border: none;
+    box-shadow: none;
 
     > button {
       @extend %button-flat;
+      border: none;
 
       &, &:first-child, &:last-child { border-radius: $circular-radius; }
 

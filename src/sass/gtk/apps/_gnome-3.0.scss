@@ -226,12 +226,12 @@ $nautilus-item-radius: $window-radius - $space-size;
     border-radius: $corner-radius - $space-size / 2;
 
     &:hover {
-      background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
-      box-shadow: 0 1px 3px rgba(black, 0.06), inset 0 1px highlight($base);
+      background-color: if($variant == 'light' and $topbar == 'light', rgba($base, 1), rgba(white, 0.15));
+      box-shadow: 0 1px 3px rgba(black, 0.06), inset 0 1px highlight($titlebar);
     }
 
     &:active {
-      box-shadow: 0 1px 3px rgba(black, 0.06), inset 0 0 0 1000px if($variant == 'light', rgba(black, 0.1), rgba(white, 0.1)), inset 0 1px highlight($base);
+      box-shadow: 0 1px 3px rgba(black, 0.06), inset 0 0 0 1000px if($variant == 'light' and $topbar == 'light', rgba(black, 0.1), rgba(white, 0.1)), inset 0 1px highlight($titlebar);
     }
 
     &.current-dir {
