@@ -2187,7 +2187,7 @@ magnifier {
 
   &:disabled { color: $text-secondary-disabled; }
 
-  &:checked {
+  &:checked, &:selected {
     transition: $transition;
     background-color: if($variant == 'light', rgba($base, 1), rgba(white, 0.15));
     color: $text;
@@ -2416,10 +2416,14 @@ $tab_needs_attention_gradient: radial-gradient(ellipse at bottom,
 }
 
 tabbar {
-  .box {
+  > revealer > box {
     min-height: $medium-size;
-    border-bottom: none;
-    background: none;
+
+    &, &:backdrop {
+      border-bottom: none;
+      background: none;
+      box-shadow: none;
+    }
   }
 
   scrolledwindow.pinned {
@@ -2467,22 +2471,26 @@ tabbar {
   }
 
   tabbox {
-    background-color: $fill;
+    background-color: $base-alt;
     background-image: none;
-    padding: $space-size / 2;
-    margin: $space-size / 2;
-    border-radius: $circular-radius;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $border;
+    box-shadow: none;
 
     > background {
       background: none;
     }
 
     > tabboxchild {
-      margin: 0;
-    }
+      margin: 0 -3px;
 
-    > separator.hidden,
-    > revealer > indicator { min-width: 0; }
+      > tab {
+        @extend %tabs_tab;
+        margin: 3px;
+      }
+    }
 
     > widget > tab { background-color: transparent; }
 
@@ -2546,21 +2554,6 @@ tabbar {
 
     .needs-attention-right undershoot.right {
       @include need-attention-gradient("left");
-    }
-
-    tabbox > background {
-      background-color: $titlebar;
-    }
-
-    .start-action,
-    .end-action {
-      background-color: gtkalpha($titlebar, .6);
-      border-color: $border;
-    }
-
-    &:backdrop .box {
-      background-color: $titlebar-backdrop;
-      transition: $transition;
     }
   }
 }
