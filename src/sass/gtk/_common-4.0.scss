@@ -1831,6 +1831,11 @@ treeview.view {
     border-radius: 0;
   }
 
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
   &.separator {
     min-height: 1px + 2px * 2;
     color: $divider;
@@ -1906,6 +1911,11 @@ treeview.view {
       border-radius: 0;
       background-clip: border-box;
 
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    
       &:not(:focus):not(:hover):not(:active) { color: $text-secondary; }
 
       &, &:disabled { background-color: $base; }
@@ -2426,58 +2436,15 @@ tabbar {
     }
   }
 
-  scrolledwindow.pinned {
-    undershoot {
-      border: 0 solid $border;
-    }
-
-    &:dir(rtl) undershoot.left {
-      border-left-width: 1px;
-    }
-
-    &:dir(ltr) undershoot.right {
-      border-right-width: 1px;
-    }
-
-    tabbox > background {
-      &:dir(ltr) {
-        box-shadow: inset -1px 0 $border;
-      }
-
-      &:dir(rtl) {
-        box-shadow: inset 1px 0 $border;
-      }
-    }
-  }
-
-  undershoot {
-    transition: background 150ms ease-in-out;
-
-    &.left {
-      @include undershoot-gradient("right", $base);
-    }
-
-    &.right {
-      @include undershoot-gradient("left", $base);
-    }
-  }
-
-  .needs-attention-left undershoot.left {
-    @include need-attention-gradient("right");
-  }
-
-  .needs-attention-right undershoot.right {
-    @include need-attention-gradient("left");
-  }
-
   tabbox {
     background-color: $base-alt;
     background-image: none;
     padding: 0;
     margin: 0;
     border-radius: 0;
-    border-bottom: 1px solid $border;
+    // border-bottom: 1px solid $border;
     box-shadow: none;
+    // background-clip: border-box;
 
     > background {
       background: none;
@@ -2531,6 +2498,50 @@ tabbar {
     border-left-width: 1px;
   }
 
+  scrolledwindow.pinned {
+    undershoot {
+      border: 0 solid $border;
+    }
+
+    &:dir(rtl) undershoot.left {
+      border-left-width: 1px;
+    }
+
+    &:dir(ltr) undershoot.right {
+      border-right-width: 1px;
+    }
+
+    tabbox > background {
+      &:dir(ltr) {
+        box-shadow: inset -1px 0 $border;
+      }
+
+      &:dir(rtl) {
+        box-shadow: inset 1px 0 $border;
+      }
+    }
+  }
+
+  undershoot {
+    transition: background 150ms ease-in-out;
+
+    &.left {
+      @include undershoot-gradient("right", $base);
+    }
+
+    &.right {
+      @include undershoot-gradient("left", $base);
+    }
+  }
+
+  .needs-attention-left undershoot.left {
+    @include need-attention-gradient("right");
+  }
+
+  .needs-attention-right undershoot.right {
+    @include need-attention-gradient("left");
+  }
+
   &:not(.inline) {
     scrolledwindow.pinned {
       undershoot {
@@ -2540,11 +2551,11 @@ tabbar {
 
     undershoot {
       &.left {
-        @include undershoot-gradient("right", $titlebar);
+        @include undershoot-gradient("right", $base);
       }
 
       &.right {
-        @include undershoot-gradient("left", $titlebar);
+        @include undershoot-gradient("left", $base);
       }
     }
 
@@ -3346,6 +3357,11 @@ scrolledwindow {
     border: none;
   }
 
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
   stack &.frame {
     // border-radius: $corner-radius;
 
@@ -3365,23 +3381,19 @@ scrolledwindow {
   }
 
   // Overflow indication, works similarly to the overshoot, the size if fixed tho.
-  @at-root undershoot {
-    &.top { @include undershoot(top); }
+  // @at-root undershoot {
+  //   &.top { @include undershoot(top); }
 
-    &.bottom { @include undershoot(bottom); }
+  //   &.bottom { @include undershoot(bottom); }
 
-    &.left { @include undershoot(left); }
+  //   &.left { @include undershoot(left); }
 
-    &.right { @include undershoot(right); }
-  }
+  //   &.right { @include undershoot(right); }
+  // }
 
   @at-root junction { // the small square between two scrollbars
-    border-style: solid none none solid;
-    border-width: 1px;
-    border-color: $divider;
-    background-color: $base;
-
-    &:dir(rtl) { border-style: solid solid none none; }
+    border: none;
+    // background-color: $base;
   }
 }
 
@@ -3789,7 +3801,7 @@ window.dialog.message { // Message Dialog styling
       @extend %button-flat;
       border: none;
 
-      &, &:first-child, &:last-child { border-radius: $circular-radius; }
+      &, &:first-child, &:last-child { border-radius: $corner-radius; }
 
       &:not(:last-child) { margin-right: $space-size; }
 
@@ -3805,7 +3817,6 @@ window.dialog.message { // Message Dialog styling
 filechooser {
   .csd & {
     background-color: $base;
-    border-radius: 0 0 $window-radius $window-radius;
   }
 
   .dialog-action-box { border-top: 1px solid $divider; }
@@ -3821,38 +3832,7 @@ filechooser {
   }
 
   stack.view {
-    background-color: transparent;
-
-    scrolledwindow {
-      background-color: transparent;
-      border-radius: 0 0 $window-radius 0;
-
-      list { background-color: transparent; }
-    }
-
-    > placesview {
-      background-color: transparent;
-      // border-bottom-right-radius: $window-radius;
-
-      > actionbar {
-        &, > revealer > box {
-          background-color: transparent;
-        }
-      }
-    }
-
     frame > border { border: none; }
-  }
-
-  .csd & placessidebar {
-    background: none;
-    border-bottom-left-radius: $window-radius;
-  }
-
-  actionbar {
-    &, > revealer > box {
-      background-color: transparent;
-    }
   }
 }
 
@@ -3934,7 +3914,10 @@ stacksidebar {
       background-color: $overlay-selected;
       color: $text;
       font-weight: 500;
-      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      
+      @if $variant == 'dark' {
+        box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      }
     }
 
     + row { margin-top: 4px; }
@@ -3991,7 +3974,10 @@ separator.sidebar {
     &:selected {
       background-color: $overlay-selected;
       color: $text;
-      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+
+      @if $variant == 'dark' {
+        box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      }
 
       &:hover {
         background-color: $overlay-focus-hover;
@@ -4029,7 +4015,10 @@ placessidebar.sidebar {
     &:selected {
       background-color: $divider;
       font-weight: 500;
-      box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+
+      @if $variant == 'dark' {
+        box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      }
 
       // &, image.sidebar-icon, button.sidebar-button { color: $text; }
     }

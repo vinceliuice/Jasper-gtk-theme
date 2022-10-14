@@ -45,6 +45,8 @@
       margin-left: 1px;
       margin-right: 1px;
 
+      &:checked { box-shadow: none; }
+
       &.slider-button {
         border-radius: $corner-radius / 2;
 
