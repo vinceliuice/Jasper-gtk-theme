@@ -17,7 +17,7 @@
 .popup-menu {
   min-width: if($compact == 'true', 10em, 12em);
   color: $text-secondary !important;
-  padding: 0 !important;
+  padding: 0;
   font-weight: normal;
   border-radius: $menu_radius;
   box-shadow: 0 3px 6px rgba(black, 0.08);
@@ -25,7 +25,7 @@
   @include fontsize($font_size - 1);
 
   .popup-menu-content {
-    padding: $base_padding 0 !important;
+    padding: $base_padding;
     background-color: $popover;
     border-radius: $menu_radius;
     margin: 0;
@@ -45,7 +45,7 @@
     color: $text-secondary !important;
     text-shadow: none;
     border-radius: $base_radius;
-    margin: 0 $base_padding;
+    margin: 0;
     font-weight: normal;
 
     &:checked {
@@ -88,7 +88,7 @@
     color: $text-secondary !important;
     border: none;
     box-shadow: none;
-    margin: 0 $base_padding;
+    margin: 0;
     border-radius: 0 0 $base_radius $base_radius;
 
     .popup-menu-item {
