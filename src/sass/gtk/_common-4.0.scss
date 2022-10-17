@@ -2513,11 +2513,11 @@ tabbar {
 
     tabbox > background {
       &:dir(ltr) {
-        box-shadow: inset -1px 0 $border;
+        box-shadow: none;
       }
 
       &:dir(rtl) {
-        box-shadow: inset 1px 0 $border;
+        box-shadow: none;
       }
     }
   }
