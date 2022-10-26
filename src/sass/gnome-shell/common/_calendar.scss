@@ -152,12 +152,16 @@
     border: none;
     font-feature-settings: "tnum";
 
-    &:hover, &:focus { background-color: $divider; }
+    &:hover, &:focus {
+      background-color: $fill;
+      box-shadow: none;
+    }
 
     &:active, &:selected {
       color: $text;
-      background-color: $track;
+      background-color: $divider;
       border-color: transparent; //avoid jumparound due to today
+      box-shadow: none;
     }
 
     &.calendar-day-heading {  //day of week heading
@@ -179,8 +183,6 @@
     border-left-width: 0;
   }
 
-  .calendar-work-day {}
-
   .calendar-nonwork-day {
     color: $text-disabled;
     font-weight: bold;
@@ -196,16 +198,19 @@
     &:hover, &:focus {
       background-color: overlay($base, hover);
       color: $text !important;
+      box-shadow: none;
     }
 
     &:active {
       background-color: darken($primary, 5%);
       color: on($primary) !important;
+      box-shadow: none;
     }
 
     &:selected {
       background-color: $primary;
       color: on($primary) !important;
+      box-shadow: none;
 
       &:hover, &:focus {
         background-color: lighten($primary, 8%);
@@ -232,8 +237,8 @@
   .calendar-week-number {
     width: $item_size - 6px;
     height: $item_size - 12px;
-    margin: 6px $base_margin/2 !important;
-    padding: 0 0;
+    margin: $base_padding * 1.5 $base_margin / 2 !important;
+    padding: 0;
     border-radius: $base_radius;
     background-color: $fill;
     color: $text-disabled;
