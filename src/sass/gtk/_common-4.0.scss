@@ -1436,6 +1436,7 @@ headerbar {
   color: $titlebar-text;
   min-height: $large-size;
   padding: 0;
+  margin: 0;
   box-shadow: inset 0 -1px $divider;
 
   &:disabled { color: $titlebar-text-disabled; }
@@ -1488,7 +1489,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 $space-size * 1.5;
+    padding: 0 $space-size;
 
     &,
     > box.start,
