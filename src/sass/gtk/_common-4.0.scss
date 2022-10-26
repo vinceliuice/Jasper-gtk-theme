@@ -597,8 +597,6 @@ button {
     }
   }
 
-  &.toggle:checked row.activatable { color: on($primary); }
-
   .linked:not(.vertical) > &,
   .linked:not(.vertical) > &.image-button {
     @extend %linked;
@@ -650,8 +648,7 @@ button {
       &:disabled { @include button(disabled); }
 
       &:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 2px (4px * .6) -1px rgba($b_color, 0.2),
+        box-shadow: 0 2px (4px * .6) -1px rgba($b_color, 0.2),
                     0 4px (5px * .6) 0 rgba($b_color, 0.14),
                     0 1px (10px * .6) 0 rgba($b_color, 0.12);
       }
@@ -659,8 +656,7 @@ button {
       &:checked { background-color: mix(on($b_color), $b_color, percentage(0.3)); }
 
       &:checked:hover {
-        box-shadow: inset 0 0 0 9999px transparent,
-                    0 3px 3px -3px rgba($b_color, 0.3),
+        box-shadow: 0 3px 3px -3px rgba($b_color, 0.3),
                     0 2px 3px -1px rgba($b_color, 0.24),
                     0 2px 5px 0 rgba($b_color, 0.12);
       }
@@ -985,23 +981,6 @@ buttoncontent {
   &:only-child {
     border-radius: $corner-radius;
   }
-}
-
-/* menu buttons */
-modelbutton.flat {
-  min-height: $menuitem-size;
-  padding: 0 $space-size * 1.5;
-  border-radius: $menuitem-radius;
-  color: $text;
-
-  @extend %button-flat-simple;
-
-  &:selected { @extend %selected_items; }
-}
-
-modelbutton.flat arrow {
-  &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
-  &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
 }
 
 button.color {
@@ -2069,6 +2048,11 @@ popover.menu {
     }
 
     &:disabled { color: $text-disabled; }
+
+    arrow {
+      &.left { -gtk-icon-source: -gtk-icontheme("go-previous-symbolic"); }
+      &.right { -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+    }
   }
 
   label.title {
@@ -3263,6 +3247,9 @@ progressbar {
     min-width: $space-size;
     min-height: $space-size;
     background-color: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
 
     trough { background-color: transparent; }
 

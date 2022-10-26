@@ -80,14 +80,20 @@
     transition: $transition,
                 background-color $ripple-fade-in-duration $ease-out;
     outline: none;
-    box-shadow: inset 0 1px highlight($background);
     background-color: $button;
     color: $text;
+
+    @if $variant == 'dark' {
+      box-shadow: inset 0 1px highlight($background);
+    }
   }
 
-  @if $t == hover {
-    box-shadow: inset 0 1px highlight($background);
+  @if $t == hover {;
     background-color: $overlay-hover;
+
+    @if $variant == 'dark' {
+      box-shadow: inset 0 1px highlight($background);
+    }
   }
 
   @if $t == focus {
@@ -97,8 +103,11 @@
   @if $t == active {
     transition: $transition,
                 background-color $ripple-fade-in-duration $ease-out;
-    box-shadow: inset 0 1px highlight($background);
     background-color: $overlay-active;
+
+    @if $variant == 'dark' {
+      box-shadow: inset 0 1px highlight($background);
+    }
   }
 
   @if $t == disabled {
@@ -108,13 +117,20 @@
   }
 
   @if $t == checked {
-    box-shadow: inset 0 1px highlight($background);
     background-color: $primary;
     color: on($primary);
+
+    @if $variant == 'dark' {
+      box-shadow: inset 0 1px highlight($primary);
+    }
   }
 
   @if $t == checked-hover {
-    box-shadow: inset 0 1px highlight($background);
+    // background-color: lighten($primary, 5%);
+
+    @if $variant == 'dark' {
+      box-shadow: inset 0 1px highlight($primary);
+    }
   }
 
   @if $t == checked-disabled {

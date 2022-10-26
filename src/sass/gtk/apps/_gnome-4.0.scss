@@ -374,7 +374,10 @@ panelframeswitcher {
 
 panelstatusbar {
   > menubutton > button,
-  > paneltogglebutton button { border-radius: 0; }
+  > paneltogglebutton button {
+    border-radius: 0;
+    @extend %button-flat;
+  }
 }
 
 // Setting window
