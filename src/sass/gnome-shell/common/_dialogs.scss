@@ -31,7 +31,7 @@
   &:insensitive {
     background-color: rgba($primary, 0.05);
     color: rgba($primary, 0.35);
-    box-shadow: none;
+    box-shadow: none !important;
   }
 }
 
@@ -61,6 +61,10 @@
     &:focus { @include button(flat-focus); }
     &:hover { @include button(flat-hover); }
     &:active { @include button(flat-active); }
+    &:insensitive {
+      @include button(flat-disabled);
+      box-shadow: none !important;
+    }
   }
 
   &-linked-button:last-child {
