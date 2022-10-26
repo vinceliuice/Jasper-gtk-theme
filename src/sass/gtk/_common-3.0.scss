@@ -2857,7 +2857,7 @@ scrolledwindow {
   }
 
   stack &.frame {
-    // border-radius: $corner-radius;
+    // border-radius: 0;
 
     viewport.frame list { border: none; }
   }
@@ -2986,7 +2986,11 @@ row {
     background-size: 1000% 1000%;
 
     &:focus {
-      box-shadow: inset 0 0 0 9999px $overlay-focus, 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      @if $variant == 'dark' {
+        box-shadow: inset 0 0 0 9999px $overlay-focus, 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      } @else {
+        box-shadow: inset 0 0 0 9999px $overlay-focus;
+      }
     }
 
     &:hover {
@@ -3003,9 +3007,14 @@ row {
                   background-size 0ms,
                   background-image 0ms;
       animation: ripple $ripple-fade-in-duration $ease-out forwards;
-      box-shadow: inset 0 0 0 9999px $overlay-hover, 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
       background-image: radial-gradient(circle, $overlay-active 10%, transparent 0%);
       background-size: 0% 0%;
+
+      @if $variant == 'dark' {
+        box-shadow: inset 0 0 0 9999px $overlay-hover, 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+      } @else {
+        box-shadow: inset 0 0 0 9999px $overlay-hover;
+      }
     }
 
     button.circular {
@@ -3015,8 +3024,13 @@ row {
 
   &:selected {
     color: inherit; // for overlays
-    background-color: $divider;
-    box-shadow: 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+    background-color: $overlay-selected;
+
+    @if $variant == 'dark' {
+      box-shadow: 0 2px 3px rgba(black, 0.1), inset 0 1px highlight($base);
+    } @else {
+      box-shadow: none;
+    }
 
     image,
     label { color: $text; }

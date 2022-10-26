@@ -1894,12 +1894,6 @@ dialog.background.csd {
         }
       }
 
-      // > box.vertical > stack.view {
-      //   > scrolledwindow > treeview.view:not(:hover):not(:selected):not(:active) {
-      //     background-color: transparent;
-      //   }
-      // }
-
       toolbar.toolbar {
         border-radius: 0 0 $window-radius $window-radius;
       }
@@ -1913,19 +1907,17 @@ dialog.background.csd {
   }
 
   stack scrolledwindow {
-    &.frame {
-      border-radius: $corner-radius;
-
-      textview.view {
-        border-radius: $corner-radius;
-
-        > text {
-          background: none;
-        }
-      }
-
-      // treeview.view:not(:hover):not(:selected) { background: none; }
-    }
+    // &.frame {
+    //   border-radius: $corner-radius;
+    //
+    //   textview.view {
+    //     border-radius: $corner-radius;
+    //
+    //     > text {
+    //       background: none;
+    //     }
+    //   }
+    // }
 
     viewport.frame {
       &.view { border-radius: $corner-radius; }

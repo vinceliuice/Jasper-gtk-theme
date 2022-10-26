@@ -78,25 +78,27 @@
 
   @if $t == normal {
     transition: $transition,
-                box-shadow $ripple-fade-in-duration $ease-out;
+                background-color $ripple-fade-in-duration $ease-out;
     outline: none;
-    box-shadow: inset 0 0 0 9999px transparent, inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($background);
     background-color: $button;
     color: $text;
   }
 
   @if $t == hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover, inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($background);
+    background-color: $overlay-hover;
   }
 
   @if $t == focus {
-    box-shadow: 0 0 0 2px rgba($primary, 0.35), inset 0 1px transparent;
+    box-shadow: 0 0 0 2px rgba($primary, 0.35);
   }
 
   @if $t == active {
-    transition: box-shadow $ripple-fade-in-duration $ease-out,
+    transition: $transition,
                 background-color $ripple-fade-in-duration $ease-out;
-    box-shadow: inset 0 0 0 9999px $overlay-active, inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($background);
+    background-color: $overlay-active;
   }
 
   @if $t == disabled {
@@ -106,31 +108,33 @@
   }
 
   @if $t == checked {
-    box-shadow: inset 0 0 0 9999px transparent, inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($background);
     background-color: $primary;
     color: on($primary);
   }
 
   @if $t == checked-hover {
-    box-shadow: inset 0 0 0 9999px transparent, inset 0 1px highlight($background);
+    box-shadow: inset 0 1px highlight($background);
   }
 
   @if $t == checked-disabled {
-    box-shadow: inset 0 0 0 9999px $overlay-checked, inset 0 1px transparent;
+    box-shadow: none;
     background-color: $fill;
     color: $text-disabled;
   }
 
   @if $t == flat-normal {
-    transition: $transition;
+    transition: $transition,
+                background-color $ripple-fade-in-duration $ease-out;
     outline: none;
-    box-shadow: inset 0 0 0 9999px transparent;
+    box-shadow: none;
     background-color: transparent;
     color: $text-secondary;
   }
 
   @if $t == flat-hover {
-    box-shadow: inset 0 0 0 9999px $overlay-hover;
+    box-shadow: none;
+    background-color: $overlay-hover;
     color: $text;
   }
 
@@ -140,8 +144,10 @@
   }
 
   @if $t == flat-active {
-    transition: $transition;
-    box-shadow: inset 0 0 0 9999px $overlay-active;
+    transition: $transition,
+                background-color $ripple-fade-in-duration $ease-out;
+    box-shadow: none;
+    background-color: $overlay-active;
     color: $text;
   }
 
