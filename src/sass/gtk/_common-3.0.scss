@@ -2844,6 +2844,10 @@ actionbar > revealer > box {
     border-radius: 0 0 $window-radius $window-radius;
   }
 
+  .background.csd frame box.vertical > & {
+    border-radius: 0;
+  }
+
   button:not(.suggested-action):not(.destructive-action) { @extend %button-flat; }
 
   .linked > button:not(.suggested-action):not(.destructive-action) { @extend %button-basic; }
@@ -2915,8 +2919,8 @@ separator {
 
 %circular_list {
   border-radius: $corner-radius + 1px;
-  box-shadow: none;
-  border: 1px solid $divider;
+  box-shadow: $shadow-z3;
+  border: none;
 
   > separator {
     background: none;
@@ -4060,12 +4064,13 @@ stackswitcher {
 popover.emoji-picker {
   padding: 0;
 
-  entry {
+  entry.search {
     border-bottom: 1px solid $divider;
     border-image: none;
     border-radius: 0;
     box-shadow: none;
     background-color: transparent;
+    background-image: none;
   }
 
   scrolledwindow { border-bottom: 1px solid $divider; }
