@@ -3434,8 +3434,8 @@ separator:not(.spacer) {
 
 %circular_list {
   border-radius: $corner-radius + 1px;
-  box-shadow: none;
-  border: 1px solid $border;
+  box-shadow: $shadow-z3;
+  border: none;
 }
 
 %circular_row {
