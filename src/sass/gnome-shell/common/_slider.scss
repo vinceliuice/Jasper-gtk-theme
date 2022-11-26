@@ -4,7 +4,7 @@ $slide_active_color: if($variant == 'dark' and $theme == 'grey', rgba(white, 0.8
 $slider_color: if($variant == 'light', white, $primary);
 
 .slider {
-  height: 12px;
+  height: 24px;
   color: $slider_color;
 
   -slider-height: 2px;
@@ -13,8 +13,8 @@ $slider_color: if($variant == 'light', white, $primary);
   -slider-active-background-color: $slide_active_color; //active trough fill
   -slider-active-border-color: $primary; //active trough border
   -slider-border-width: 0;
-  -slider-handle-radius: 6px;
-  -slider-handle-border-width: 4px;
+  -slider-handle-radius: 8px;
+  -slider-handle-border-width: 6px;
   -slider-handle-border-color: if($variant == 'light', $primary, white);
 
   // barlevels are for >= 3.29.90
