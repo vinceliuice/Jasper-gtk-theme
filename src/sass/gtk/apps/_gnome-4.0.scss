@@ -436,9 +436,15 @@ window.dialog {
 }
 
 window.aboutdialog {
-  stack scrolledwindow.frame > {
-    &, viewport.view {
+  stack scrolledwindow.frame {
+    &,
+    & > .view,
+    & > .view > text {
       border-radius: $window-radius - $space-size;
     }
+  }
+
+  .large-icons {
+    -gtk-icon-size: 128px;
   }
 }
