@@ -279,13 +279,15 @@ spinner {
  ****************/
 %entry,
 entry {
-  %entry_basic, & {
+  @at-root %entry_basic, & {
     min-height: $medium-size;
     padding: 0 8px;
     border-radius: $corner-radius;
     caret-color: currentColor; // this shouldn't be needed.
 
     @include entry(normal);
+
+    &:hover:not(:focus) { @include entry(hover); }
 
     &:focus { @include entry(checked); }
 
