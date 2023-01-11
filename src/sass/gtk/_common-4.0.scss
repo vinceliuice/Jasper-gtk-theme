@@ -2151,6 +2151,8 @@ popover.background {
     }
   }
 
+  entry { border-radius: $menuitem-radius; }
+
   .osd &,
   &.touch-selection,
   &.magnifier {
