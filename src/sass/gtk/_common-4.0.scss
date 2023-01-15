@@ -274,7 +274,7 @@ entry {
     &.flat {
       @include entry(raised-normal);
 
-      &:hover { @include entry(raised-hover); }
+      &:hover:not(:focus-within) { @include entry(raised-hover); }
 
       &:focus-within { @include entry(raised-checked); }
 
