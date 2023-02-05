@@ -10,7 +10,7 @@
     color: on(black, secondary);
     background-color: on(black, divider);
     border: none;
-    border-radius: $base_radius;
+    border-radius: 3px;
   }
 
   // drag and drop indicator
@@ -25,7 +25,7 @@
 // selected indicator
 .workspace-thumbnail-indicator {
   border: 3px solid $primary;
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 0px;
   // background-color: transparentize($primary_color, 0.9);
 }

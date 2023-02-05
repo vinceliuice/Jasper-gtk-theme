@@ -233,10 +233,10 @@
   }
 
   .calendar-week-number {
-    width: $item_size - 6px;
-    height: $item_size - 12px;
-    margin: $base_padding * 1.5 $base_margin / 2 !important;
-    padding: 0;
+    width: $item_size - 6px !important;
+    height: $item_size - 6px !important;
+    margin: 6px $base_margin / 2 !important;
+    padding: 0 !important;
     border-radius: $base_radius;
     background-color: $fill;
     color: $text-disabled;
