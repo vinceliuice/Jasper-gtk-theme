@@ -1163,12 +1163,7 @@ searchbar > revealer > box {
   background-color: $titlebar;
   color: $titlebar-text;
   border-radius: $window-radius $window-radius 0 0;
-
-  @if $variant == 'light' or $rimless == 'true' {
-    box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar, topbar);
-  } @else {
-    box-shadow: inset 0 -1px $border;
-  }
+  box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar, topbar);
 
   &:disabled { color: $titlebar-text-disabled; }
 
@@ -1211,12 +1206,7 @@ searchbar > revealer > box {
     background-color: $titlebar;
     background-image: none;
     transition: all $duration $ease-out;
-
-    @if $variant == 'light' or $rimless == 'true' {
-      box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
-    } @else {
-      box-shadow: inset 0 -1px $border;
-    }
+    box-shadow: inset 0 -1px $border, inset 0 1px highlight($titlebar);
 
     &:backdrop {
       background-color: $titlebar-backdrop;
@@ -1367,11 +1357,7 @@ searchbar > revealer > box {
     }
 
     .background.csd & {
-      @if $rimless == 'false' and $variant == 'dark' {
-        box-shadow: inset 0 -1px $border;
-      } @else {
-        box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
-      }
+      box-shadow: inset 0 1px highlight($titlebar), inset 0 -1px $border;
     }
 
     // workaround for non-animatable buttons
@@ -1720,12 +1706,7 @@ menu,
 
   .csd & {
     border: none;
-
-    @if $rimless == 'true' {
-      box-shadow: inset 0 1px highlight($surface);
-    } @else {
-      box-shadow: inset 0 0 0 1px highlight($surface);
-    }
+    box-shadow: inset 0 1px highlight($surface);
   }
 
   menuitem {
@@ -1827,24 +1808,10 @@ popover.background {
   border-radius: $menu-radius;
 
   &, .csd & {
-    @if $rimless == 'true' {
-      border: none;
-      box-shadow: $shadow-z4;
+    border: none;
+    box-shadow: $shadow-z4;
 
-      &:backdrop { box-shadow: $shadow-z3; }
-    } @else if $variant == 'dark' {
-      border: 1px solid highlight($surface);
-      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
-      background-clip: border-box;
-
-      &:backdrop { box-shadow: $shadow-z3, 0 0 0 1px $window-border; }
-    } @else {
-      border: 1px solid rgba(black, 0.15);
-      box-shadow: $shadow-z5;
-      background-clip: padding-box;
-
-      &:backdrop { box-shadow: $shadow-z3; }
-    }
+    &:backdrop { box-shadow: $shadow-z3; }
   }
 
   > stack { margin: 0; } // remove extra padding from menu style popovers
@@ -3146,12 +3113,7 @@ messagedialog { // Message Dialog styling
     border-style: none;
     background-color: $surface;
     color: $text;
-
-    @if $rimless == 'false' {
-      box-shadow: none;
-    } @else {
-      box-shadow: inset 0 1px highlight($surface);
-    }
+    box-shadow: inset 0 1px highlight($surface);
 
     &:backdrop {
       background-color: $surface;
@@ -3723,19 +3685,7 @@ decoration {
   transition: $transition-shadow;
   border-radius: $window-radius;
   // background-color: $background;
-
-  @if $rimless == 'true' {
-    box-shadow: $shadow-z16, 0 0 36px transparent;
-  } @else {
-    box-shadow: $shadow-z16, 0 0 0 1px $window-border, 0 0 36px transparent;
-
-    @if $variant == 'dark' {
-      .background.csd & {
-        border: 1px solid highlight($background);
-        background-clip: border-box;
-      }
-    }
-  }
+  box-shadow: $shadow-z16, 0 0 36px transparent;
 
   // this is used for the resize cursor area
   margin: 8px;
@@ -3746,11 +3696,7 @@ decoration {
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
 
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z4, 0 0 36px transparent;
-    } @else {
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border, 0 0 36px transparent;
-    }
+    box-shadow: $shadow-z4, 0 0 36px transparent;
   }
 
   .maximized &,
@@ -3770,12 +3716,7 @@ decoration {
   .ssd & {
     border: none;
     border-radius: $window-radius $window-radius 0 0;
-
-    @if $rimless == 'true' {
-      box-shadow: none;
-    } @else {
-      box-shadow: 0 0 0 1px $window-border; // just doing borders, wm draws actual shadows
-    }
+    box-shadow: none;
   }
 
   .metacity & {
@@ -3787,12 +3728,7 @@ decoration {
   .csd.popup & {
     border-radius: $menu-radius;
     border: none;
-
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z4;
-    } @else {
-      box-shadow: $shadow-z5, 0 0 0 1px $window-border;
-    }
+    box-shadow: $shadow-z4;
   }
 
   tooltip.csd & {
@@ -3803,12 +3739,6 @@ decoration {
 
   messagedialog.csd & {
     border-radius: $window-radius;
-
-    @if $variant == 'dark' and $rimless == 'false' {
-      border: 1px solid highlight($surface);
-      background-color: $surface;
-      background-clip: border-box;
-    }
   }
 
   .solid-csd & {

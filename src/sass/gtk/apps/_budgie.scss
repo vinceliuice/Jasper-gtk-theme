@@ -27,18 +27,8 @@
 
 // Budgie popover
 .budgie-popover {
-  @if $rimless == 'true' {
-    border: none;
-    box-shadow: $shadow-z4;
-  } @else if $variant == 'dark' {
-    border: 1px solid highlight($surface);
-    box-shadow: $shadow-z4, 0 0 0 1px $window-border;
-    background-clip: border-box;
-  } @else {
-    border: 1px solid $border;
-    box-shadow: $shadow-z4;
-    background-clip: padding-box;
-  }
+  border: none;
+  box-shadow: $shadow-z4;
 
   background-color: $popover;
   border-radius: $menu-radius;

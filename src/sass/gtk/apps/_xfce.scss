@@ -79,12 +79,7 @@ window#whiskermenu-window {
     margin: $space-size;
     border: none;
     background-color: $popover;
-
-    @if $rimless == 'true' {
-      box-shadow: $shadow-z4, inset 0 1px highlight($popover);
-    } @else {
-      box-shadow: $shadow-z4, 0 0 0 1px $window-border, inset 0 0 0 1px highlight($popover);
-    }
+    box-shadow: $shadow-z4, inset 0 1px highlight($popover);
   }
 
   box.categories > button.radio { // sidebar categories button
@@ -127,11 +122,7 @@ window#whiskermenu-window {
 }
 
 #XfceNotifyWindow {
-  @if $rimless == 'true' {
-    box-shadow: $shadow-z4;
-  } @else {
-    box-shadow: $shadow-z4, 0 0 0 1px $window-border;
-  }
+  box-shadow: $shadow-z4;
 
   buttonbox { padding: 0; }
 

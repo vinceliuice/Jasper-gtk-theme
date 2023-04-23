@@ -440,12 +440,7 @@ window.org-gnome-gedit {
   padding: $space-size;
   background-color: $background;
   border-radius: 0 0 $corner-radius + $space-size $corner-radius + $space-size;
-
-  @if $rimless == 'true' {
-    box-shadow: $shadow-z5;
-  } @else {
-    box-shadow: $shadow-z5, 0 0 0 1px $window-border;
-  }
+  box-shadow: $shadow-z5;
 
   .linked:not(.vertical) > entry {
     .gedit-search-entry-occurrences-tag {
@@ -1942,11 +1937,7 @@ window.background.csd.unified {
 
   // ...and add it on the window itself
   > decoration-overlay {
-    @if $rimless == 'true' {
-      box-shadow: inset 0 1px highlight($titlebar);
-    } @else {
-      box-shadow: inset 0 0 0 1px highlight($titlebar);
-    }
+    box-shadow: inset 0 1px highlight($titlebar);
   }
 
   &,

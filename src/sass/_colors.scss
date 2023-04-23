@@ -24,7 +24,7 @@
     @if ($state == 'track-disabled') { @return rgba($black, 0.12); }
     @if ($state == 'divider') { @return rgba($black, 0.12); }
     @if ($state == 'secondary-fill') { @return rgba($black, 0.08); }
-    @if ($state == 'fill') { @return rgba($black, 0.04); }
+    @if ($state == 'fill') { @return rgba($black, 0.05); }
   } @else {
     @if ($state == 'primary') { @return $white; }
     @if ($state == 'secondary') { @return rgba($white, 0.7); }
@@ -34,7 +34,7 @@
     @if ($state == 'track-disabled') { @return rgba($white, 0.12); }
     @if ($state == 'divider') { @return rgba($white, 0.12); }
     @if ($state == 'secondary-fill') { @return rgba($white, 0.08); }
-    @if ($state == 'fill') { @return rgba($white, 0.04); }
+    @if ($state == 'fill') { @return rgba($white, 0.05); }
   }
 }
 
@@ -130,8 +130,8 @@ $popover:                               if($variant == 'light', background(a), b
 $panel-solid:                           if($topbar == 'dark', background(e), background(c)); // for Unity panel which doesn't allow translucent colors
 $panel:                                 rgba($panel-solid, $panel_opacity);
 
-$button:                                if($variant == 'dark', on($background, secondary-fill), on($background, fill));
-$entry:                                 if($variant == 'dark', on($background, secondary-fill), on($background, fill));
+$button:                                on($background, fill);
+$entry:                                 on($background, fill);
 
 //
 // Misc colors

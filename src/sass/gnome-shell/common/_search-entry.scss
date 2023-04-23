@@ -3,29 +3,68 @@
   width: 320px;
   min-height: $item_size;
   padding: 0 $base_padding * 2;
-  color: $text-secondary;
   transition-duration: 150ms;
   border-radius: $base_radius;
-  caret-color: $text;
-  selection-background-color: $divider;
+  caret-color: on($osd);
+  selection-background-color: on($osd, divider);
   selected-color: on($primary) !important;
-  @include entry(normal, $bc: $base);
+  @include entry(normal, $bc: $osd);
+
+  color: on($osd, secondary);
+  background-color: on($osd, fill);
 
   &:hover {
-    @include entry(hover, $bc: $base);
+    @include entry(hover, $bc: $osd);
+    background-color: on($osd, fill);
   }
 
   &:focus {
     @if $theme == 'grey' {
-      @include entry(focus, $bc: $base, $fc: white);
+      @include entry(focus, $bc: $osd, $fc: white);
     } @else {
-      @include entry(focus, $bc: $base);
+      @include entry(focus, $bc: $osd);
     }
+
+    background-color: on($osd, fill);
   }
 
   .search-entry-icon {
     icon-size: 16px;
-    padding: 0 0;
+    padding: 0;
+    color: on($osd, secondary-disabled);
+  }
+
+  &:hover, &:focus {
+    .search-entry-icon { color: on($osd, secondary); }
+  }
+
+  &:insensitive {
+    border: none;
+    color: on($osd, secondary-disabled);
+  }
+
+  StLabel.hint-text {
+    color: on($osd, disabled);
+  }
+}
+
+.popup-menu .search-entry { // reset
+  caret-color: $text;
+  selection-background-color: $divider;
+  color: $text-secondary;
+  background-color: $fill;
+
+  &:hover {
+    background-color: $fill;
+    border-color: $track;
+  }
+
+  &:focus {
+    background-color: $fill;
+    border-color: $primary;
+  }
+
+  .search-entry-icon {
     color: $text-secondary-disabled;
   }
 
@@ -41,8 +80,4 @@
   StLabel.hint-text {
     color: $text-disabled;
   }
-}
-
-.popup-menu .search-entry { // reset
-  @extend %entry;
 }

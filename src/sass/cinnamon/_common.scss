@@ -297,16 +297,7 @@ $sub_menu_bg: mix($text, $popover, 10%);
     border-radius: $menu-radius;
     background-clip: padding-box;
     background-color: $popover;
-
-    @if $rimless == 'false' {
-      box-shadow: inset 0 0 0 1px highlight($popover);
-
-      @if $variant == 'dark' {
-        border: 1px solid $window-border;
-      }
-    } @else {
-      box-shadow: inset 0 1px highlight($popover);
-    }
+    box-shadow: inset 0 1px highlight($popover);
   }
 
   .popup-menu-item {

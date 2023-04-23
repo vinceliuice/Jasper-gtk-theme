@@ -18,7 +18,7 @@
 
   @if $t == hover {
     color: $tc;
-    border-color: $track;
+    border-color: on($bc, track);
     background-color: $bc;
   }
 
@@ -31,7 +31,7 @@
 
   @if $t == insensitive {
     background-color: $bc;
-    color: rgba($tc, 0.35);
+    color: on($bc, disabled);
     border-color: transparent;
   }
 
@@ -70,7 +70,7 @@
 
   @if $t == normal {
     color: $tc;
-    background-color: $bc;
+    background-color: overlay($bc, normal);
     box-shadow: none;
   }
 
@@ -89,6 +89,12 @@
   @if $t == active {
     color: $tc;
     background-color: overlay($bc, active);
+    box-shadow: none;
+  }
+
+  @if $t == checked {
+    color: on($fc);
+    background-color: $fc;
     box-shadow: none;
   }
 
