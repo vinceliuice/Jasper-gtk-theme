@@ -36,9 +36,9 @@ Run the following commands in the terminal:
 > Tip: `./install.sh` allows the following options:
 
 ```
--d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
+-d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
 
--n, --name NAME         Specify theme name (Default: $THEME_NAME)
+-n, --name NAME         Specify theme name (Default: Jasper)
 
 -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
 
