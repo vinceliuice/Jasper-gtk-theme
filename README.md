@@ -40,6 +40,8 @@ Run the following commands in the terminal:
 
 -s, --size VARIANT...   Specify size variant [standard|compact] (Default: standard variant)
 
+-l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
+
 -u, --uninstall         Uninstall themes or link for libadwaita [theme|libadwaita] (Default: theme option)
 
 --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
