@@ -36,28 +36,28 @@ Run the following commands in the terminal:
 > Tip: `./install.sh` allows the following options:
 
 ```
-  -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
+-d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
 
-  -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+-n, --name NAME         Specify theme name (Default: $THEME_NAME)
 
-  -t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
+-t, --theme VARIANT     Specify theme color variant(s) [default|purple|pink|red|orange|yellow|green|blue|grey|all] (Default: teal)
 
-  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)
+-c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)
 
-  -s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
+-s, --size VARIANT      Specify size variant [standard|compact] (Default: standard variant)
 
-  -l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
+-l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
 
-  -r, --remove,
-  -u, --uninstall         Uninstall/Remove installed themes
+-r, --remove,
+-u, --uninstall         Uninstall/Remove installed themes
 
-  --tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
-                          1. nord:     Nord ColorScheme version
-                          2. dracula   Dracula ColorScheme version
-                          3. black:    Blackness color version
-                          4. macos:    Macos style windows button
+--tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
+                        1. nord:     Nord ColorScheme version
+                        2. dracula   Dracula ColorScheme version
+                        3. black:    Blackness color version
+                        4. macos:    Macos style windows button
 
-  -h, --help              Show help
+-h, --help              Show help
 ```
 
 > For more information, run: `./install.sh --help`
