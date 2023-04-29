@@ -51,11 +51,10 @@ Run the following commands in the terminal:
 -r, --remove,
 -u, --uninstall         Uninstall/Remove installed themes
 
---tweaks                Specify versions for tweaks [nord|dracula|black|macos] (only nord and dracula can not mix use with!)
-                        1. nord:     Nord ColorScheme version
-                        2. dracula   Dracula ColorScheme version
-                        3. black:    Blackness color version
-                        4. macos:    Macos style windows button
+--tweaks                Specify versions for tweaks [(nord|dracula)|black|macos] (only nord and dracula can not mix use with!)
+                        1. nord/dracula: Nord/Dracula ColorScheme version
+                        2. black:        Blackness color version
+                        3. macos:        Macos style windows button
 
 -h, --help              Show help
 ```
