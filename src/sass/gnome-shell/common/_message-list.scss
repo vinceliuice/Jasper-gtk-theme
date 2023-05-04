@@ -120,7 +120,9 @@
 
   &:hover, &:focus { color: $text; background-color: $divider; }
   &:active { color: $text; background-color: $track; }
-  &:insensitive { color: $text-secondary-disabled; }
+  &:insensitive { color: mix($text, $base, 35%); }
+
+  StIcon { icon-size: $base_icon_size; }
 }
 
 // album-art

@@ -10,12 +10,8 @@
   selected-color: on($primary) !important;
   @include entry(normal, $bc: $osd);
 
-  color: on($osd, secondary);
-  background-color: on($osd, fill);
-
   &:hover {
     @include entry(hover, $bc: $osd);
-    background-color: on($osd, fill);
   }
 
   &:focus {
@@ -24,8 +20,6 @@
     } @else {
       @include entry(focus, $bc: $osd);
     }
-
-    background-color: on($osd, fill);
   }
 
   .search-entry-icon {
@@ -51,17 +45,14 @@
 .popup-menu .search-entry { // reset
   caret-color: $text;
   selection-background-color: $divider;
-  color: $text-secondary;
-  background-color: $fill;
+  @include entry(normal);
 
   &:hover {
-    background-color: $fill;
-    border-color: $track;
+    @include entry(hover);
   }
 
   &:focus {
-    background-color: $fill;
-    border-color: $primary;
+    @include entry(focus);
   }
 
   .search-entry-icon {

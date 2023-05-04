@@ -23,6 +23,12 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
+// Stage
+stage {
+  @include fontsize($font_size);
+  color: $text;
+}
+
 %large_title {
   font-weight: 300;
   @include fontsize(24);
@@ -68,8 +74,8 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
   @include fontsize(8);
 }
 
-%monospace {font-family: monospace;}
-%numeric { font-feature-settings: "tnum";}
+%monospace { font-family: monospace; }
+%numeric { font-feature-settings: "tnum"; }
 
 @import 'widgets-40-0';
 @import 'extensions-40-0';
