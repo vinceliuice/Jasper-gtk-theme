@@ -2,14 +2,105 @@
 // Nautilus
 //
 
+$nautilus: if($variant == 'light', $base, $fill);
+$nautilus-item-radius: $window-radius - $space-size;
+
 .nautilus-window {
+  &.background.csd {
+    background-color: $titlebar;
+
+    &:backdrop { background-color: $titlebar-backdrop; }
+
+    headerbar, headerbar:backdrop {
+      background: none;
+      box-shadow: none;
+    }
+
+    flap {
+      background-color: $titlebar;
+
+      &:backdrop { background-color: $titlebar-backdrop; }
+
+      > separator {
+        background: none;
+        border: none;
+      }
+    }
+
+    flap.unfolded > placessidebar {
+      background: none;
+
+      > scrolledwindow > viewport {
+        margin: 1px $space-size / 2 $space-size $space-size;
+        border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius;
+        background-color: $nautilus;
+        box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($base);
+
+        > list.navigation-sidebar {
+          background: none;
+
+          > row {
+            border-radius: $nautilus-item-radius - $space-size;
+          }
+
+          > separator { background: none; }
+        }
+      }
+
+      scrollbar {
+        background: none;
+        border: none;
+        margin: 0 $space-size / 2 $space-size 0;
+      }
+    }
+  }
+
   placesview {
     label { color: $text-secondary; }
+
+    list {
+      background-color: transparent;
+    }
+
+    actionbar {
+      background-color: transparent;
+
+      > revealer > box {
+        border-radius: 0 0 $nautilus-item-radius $nautilus-item-radius / 2;
+      }
+    }
+  }
+
+  placesview,
+  .nautilus-grid-view.view,
+  .nautilus-list-view.view {
+    background-color: $nautilus;
+    border-radius: $nautilus-item-radius / 2 $nautilus-item-radius $nautilus-item-radius $nautilus-item-radius / 2;
+    margin: 1px $space-size $space-size;
+    box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($base);
   }
 
   .nautilus-grid-view {
+    gridview.view {
+      background-color: transparent;
+    }
+
     child.activatable {
       @extend %row_activatable;
+
+      &:selected {
+        @extend %selected_items_color;
+      }
+    }
+  }
+
+  .nautilus-list-view.view {
+    .view {
+      background-color: transparent;
+
+      &:selected {
+        @extend %selected_items_color;
+      }
     }
   }
 
@@ -18,7 +109,7 @@
     padding: 0;
     margin: $space-size;
     border-style: none;
-    border-radius: $corner-radius;
+    border-radius: $window-radius - $space-size * 2;
     background-color: $primary;
     color: on($primary);
     box-shadow: $shadow-z3;

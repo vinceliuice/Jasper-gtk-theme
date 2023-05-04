@@ -200,6 +200,7 @@
     outline: 0 solid transparent;
     outline-offset: 2px;
     color: $text-secondary;
+    box-shadow: none;
   }
 
   @if $t == flat-hover {
@@ -212,6 +213,7 @@
     color: $text;
     outline: 2px solid $fill;
     outline-offset: -2px;
+    box-shadow: none;
   }
 
   @if $t == flat-active {
@@ -224,6 +226,7 @@
     background-size: 0% 0%;
     background-color: $overlay-hover;
     color: $text;
+    box-shadow: none;
   }
 
   @if $t == flat-disabled {
@@ -235,6 +238,7 @@
   @if $t == flat-checked {
     background-color: $overlay-checked;
     color: $text;
+    box-shadow: none;
   }
 
   @if $t == flat-checked-disabled {
