@@ -265,12 +265,6 @@ $nautilus-item-radius: $window-radius - $space-size;
   }
 }
 
-// View
-// Hide superfluous treeview drop target indication
-.nautilus-list-view .view:not(.dnd) {
-  // border-bottom: 1px solid $divider;
-}
-
 .search-information {
   padding: 2px;
   border-bottom: 1px solid $divider;
@@ -1176,10 +1170,6 @@ pillbox {
   border-radius: $corner-radius;
 }
 
-buildperspective row {
-  // padding: 10px;
-}
-
 layoutpane entry.search {
   border-bottom: 1px solid $divider;
   box-shadow: none;
@@ -1206,10 +1196,6 @@ editortweak entry.search {
 // eggsearchbar > revealer > box,
 docktabstrip {
   min-height: 39px;
-}
-
-eggsearchbar entry {
-  // min-height: 24px;
 }
 
 window.workbench preferences preferencesgroup list entry {
@@ -1334,9 +1320,6 @@ GdMainIconView.content-view {
   frame.content-view > border { border-style: none; }
 }
 
-.photos-icon-bg {
-}
-
 .photos-fade-in {
   opacity: 1;
   transition: opacity $duration $ease-out;
@@ -1345,9 +1328,6 @@ GdMainIconView.content-view {
 .photos-fade-out {
   opacity: 0;
   transition: opacity $duration $ease-out;
-}
-
-.photos-collection-icon {
 }
 
 button.photos-filter-preview {

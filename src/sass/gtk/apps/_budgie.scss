@@ -142,9 +142,9 @@
     }
   }
 
-  &.sound-popover {
-    // separator { margin: $space-size / 2 0; }
-  }
+  // &.sound-popover {
+  //   separator { margin: $space-size / 2 0; }
+  // }
 
   &.night-light-indicator {
     .container { padding: $space-size / 2; }
@@ -331,9 +331,9 @@
   .alert { color: $destructive; }
 
   // End Section needs to be fancy
-  .end-region {
-    // background-color: rgba(0,0,0, 0.2);
-  }
+  // .end-region {
+  //   background-color: rgba(0,0,0, 0.2);
+  // }
 
   // budgie-pixel-saver-applet
   .titlebar:not(headerbar) {
