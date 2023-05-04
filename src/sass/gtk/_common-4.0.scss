@@ -5,6 +5,10 @@
 .background {
   background-color: $background;
   color: $text;
+
+  box.background {
+    background-color: transparent;
+  }
 }
 
 dnd {
@@ -3843,6 +3847,16 @@ window.dialog.message { // Message Dialog styling
       // &.suggested-action:not(:disabled) { color: $suggested; }
 
       &.destructive-action:not(:disabled) { color: $destructive; }
+    }
+  }
+}
+
+window.about {
+  headerbar {
+    color: $text-secondary;
+
+    button:not(.suggested-action):not(.destructive-action) {
+      @extend %button-flat;
     }
   }
 }

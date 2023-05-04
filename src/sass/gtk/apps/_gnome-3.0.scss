@@ -7,6 +7,7 @@
 // https://gitlab.gnome.org/GNOME/nautilus/blob/master/src/resources/css/nautilus.css
 
 $nautilus: if($variant == 'light', $base, $fill);
+$nautilus-sidebar: if($topbar == 'light', $base, on($titlebar, fill));
 $nautilus-item-radius: $window-radius - $space-size;
 
 .nautilus-window {
@@ -33,15 +34,25 @@ $nautilus-item-radius: $window-radius - $space-size;
 
     placessidebar {
       background: none;
+      color: $titlebar-text-secondary;
 
       > viewport.frame {
         margin: 1px $space-size / 2 $space-size $space-size;
         border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius;
-        background-color: $nautilus;
+        background-color: $nautilus-sidebar;
         box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($base);
 
         > list {
           background: none;
+          color: $titlebar-text-secondary;
+
+          > row {
+            color: $titlebar-text-secondary;
+
+            &:hover, &:active, &:selected {
+              color: $titlebar-text;
+            }
+          }
 
           > separator { background: none; }
         }

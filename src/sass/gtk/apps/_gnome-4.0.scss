@@ -3,23 +3,32 @@
 //
 
 $nautilus: if($variant == 'light', $base, $fill);
+$nautilus-sidebar: if($topbar == 'light', $base, on($titlebar, fill));
 $nautilus-item-radius: $window-radius - $space-size;
 
 .nautilus-window {
   &.background.csd {
     background-color: $titlebar;
 
-    &:backdrop { background-color: $titlebar-backdrop; }
+    &:backdrop {
+      background-color: $titlebar-backdrop;
+      transition: none;
+    }
 
-    headerbar, headerbar:backdrop {
-      background: none;
-      box-shadow: none;
+    headerbar {
+      &, &:backdrop {
+        box-shadow: none;
+        transition: none;
+      }
     }
 
     flap {
       background-color: $titlebar;
 
-      &:backdrop { background-color: $titlebar-backdrop; }
+      &:backdrop {
+        background-color: $titlebar-backdrop;
+        transition: none;
+      }
 
       > separator {
         background: none;
@@ -29,18 +38,36 @@ $nautilus-item-radius: $window-radius - $space-size;
 
     flap.unfolded > placessidebar {
       background: none;
+      color: $titlebar-text-secondary;
 
       > scrolledwindow > viewport {
         margin: 1px $space-size / 2 $space-size $space-size;
         border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius;
-        background-color: $nautilus;
-        box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($base);
+        background-color: $nautilus-sidebar;
+        box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($titlebar);
 
         > list.navigation-sidebar {
           background: none;
+          color: $titlebar-text-secondary;
 
           > row {
             border-radius: $nautilus-item-radius - $space-size;
+
+            @if $topbar == 'dark' {
+              &:selected {
+                box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
+              }
+            }
+
+            &, image.sidebar-icon, label.sidebar-label {
+              color: $titlebar-text-secondary;
+            }
+
+            &:hover, &:focus, &:active, &:selected {
+              &, image.sidebar-icon, label.sidebar-label {
+                color: $titlebar-text;
+              }
+            }
           }
 
           > separator { background: none; }
@@ -51,6 +78,18 @@ $nautilus-item-radius: $window-radius - $space-size;
         background: none;
         border: none;
         margin: 0 $space-size / 2 $space-size 0;
+
+        > range > trough {
+          > slider {
+            background-color: $titlebar-text-disabled;
+
+            &:hover { background-color: $titlebar-text-disabled; }
+
+            &:active { background-color: $titlebar-text-secondary; }
+
+            &:disabled { background-color: $titlebar-text-secondary-disabled; }
+          }
+        }
       }
     }
   }
