@@ -2171,7 +2171,7 @@ magnifier {
               background-image 0ms;
   min-height: $small-size;
   min-width: $small-size;
-  padding: $space-size / 2 $space-size * 2;
+  padding: $space-size / 2 $space-size;
   margin: 0;
   border: none;
   outline: none;
@@ -2316,11 +2316,11 @@ notebook {
 
           &:last-child {
             margin-left: $space-size;
-            margin-right: $space-size - 12px;
+            margin-right: -$space-size / 2;
           }
 
           &:first-child {
-            margin-left: $space-size - 12px;
+            margin-left: -$space-size / 2;
             margin-right: $space-size;
           }
         }

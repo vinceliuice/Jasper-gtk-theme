@@ -125,10 +125,45 @@ $nautilus-item-radius: $window-radius - $space-size;
     }
 
     child.activatable {
-      @extend %row_activatable;
+      transition: $transition,
+      background-size $ripple-fade-out-duration $ease-out,
+      background-image $ripple-fade-out-opacity-duration $ease-out,
+      font-weight 0;
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+      background-image: radial-gradient(circle, transparent 10%, transparent 0%);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1000% 1000%;
+      outline: none;
+
+      &:hover {
+        color: $text;
+        background-color: $overlay-normal;
+        box-shadow: none;
+      }
+
+      &:active {
+        transition: $transition,
+        background-size 0ms,
+        background-image 0ms,
+        font-weight 0ms;
+        animation: ripple $ripple-fade-in-duration $ease-out forwards;
+        background-image: radial-gradient(circle, $overlay-normal 10%, transparent 0%);
+        background-size: 0% 0%;
+        background-color: $overlay-normal;
+        color: $text;
+        box-shadow: none;
+      }
 
       &:selected {
         @extend %selected_items_color;
+
+        &:hover {
+          color: $primary;
+          background-color: rgba($primary, 0.3);
+        }
       }
     }
   }
@@ -139,6 +174,46 @@ $nautilus-item-radius: $window-radius - $space-size;
 
       &:selected {
         @extend %selected_items_color;
+      }
+    }
+  }
+
+  tabbox {
+    &, &:backdrop {
+      transition: none;
+      background-color: transparent;
+    }
+
+    > tabboxchild {
+      > tab {
+        color: $titlebar-text-secondary;
+
+        &:hover {
+          background-color: $titlebar-fill;
+          color: $titlebar-text;
+        }
+
+        &:disabled { color: $titlebar-text-secondary-disabled; }
+
+        &:checked, &:selected {
+          background-color: if($topbar == 'light', rgba($base, 1), rgba(white, 0.15));
+          color: $titlebar-text;
+          box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
+
+          &:disabled { color: $titlebar-text-disabled; }
+        }
+
+        button.tab-close-button {
+          color: $titlebar-text-secondary;
+
+          &:hover, &:active {
+            color: $titlebar-text;
+          }
+
+          &:disabled {
+            color: $titlebar-text-secondary-disabled;
+          }
+        }
       }
     }
   }
