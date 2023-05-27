@@ -1372,7 +1372,7 @@ headerbar {
   min-height: $large-size;
   padding: 0 $space-size;
 
-  box.vertical & {
+  box.vertical:not(.titlebar) & {
     background-color: $titlebar;
   }
 
