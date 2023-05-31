@@ -4450,7 +4450,7 @@ window {
                 0 4px 3px 0 transparent,
                 0 1px 6px 0 transparent;
   
-    &.background:not(.about) {
+    &.background:not(.about):not(.message) {
       background-color: transparent;
       background-image: linear-gradient(to bottom,
                                         $titlebar,
@@ -4463,7 +4463,7 @@ window {
       // transition: $transition-shadow;
       transition: none;
   
-      &.background:not(.about) {
+      &.background:not(.about):not(.message) {
         background-color: transparent;
         background-image: linear-gradient(to bottom,
                                           $titlebar-backdrop,
