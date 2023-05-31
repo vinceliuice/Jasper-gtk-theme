@@ -1344,11 +1344,11 @@ searchbar > revealer > box {
   border-style: solid;
   border-width: 0 0 1px;
   border-color: $divider;
-  background-color: $background;
+  background-color: $base-alt;
   background-clip: border-box;
   box-shadow: none;
 
-  entry { margin: 0; }
+  entry, button, menubutton, splitbutton { margin: 0; }
 }
 
 /***************
