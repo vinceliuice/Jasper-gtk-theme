@@ -4443,7 +4443,7 @@ window {
   padding: 0;
 
   &.csd {
-    transition: none;
+    transition: $transition-shadow;
     border-radius: $window-radius;
     box-shadow: $shadow-z16, inset 0 1px highlight($titlebar),
                 0 2px 3px -1px transparent,
@@ -4460,9 +4460,6 @@ window {
     }
   
     &:backdrop {
-      // transition: $transition-shadow;
-      transition: none;
-  
       &.background:not(.about):not(.message) {
         background-color: transparent;
         background-image: linear-gradient(to bottom,
