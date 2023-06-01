@@ -12,13 +12,11 @@ $nautilus-item-radius: $window-radius - $space-size;
 
     &:backdrop {
       background-color: $titlebar-backdrop;
-      transition: none;
     }
 
     headerbar {
       &, &:backdrop {
         box-shadow: none;
-        transition: none;
       }
     }
 
