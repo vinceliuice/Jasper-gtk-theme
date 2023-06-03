@@ -2226,7 +2226,7 @@ notebook {
     background-color: $fill;
     padding: $space-size / 2;
     margin: $space-size / 2;
-    border-radius: $modal-radius + $space-size / 2;
+    border-radius: $small-size / 2 + $space-size;
     // background-clip: border-box;
 
     &.top > tabs > arrow {
@@ -4443,7 +4443,7 @@ window {
   padding: 0;
 
   &.csd {
-    transition: $transition-shadow;
+    transition: none;
     border-radius: $window-radius;
     box-shadow: $shadow-z16, inset 0 1px highlight($titlebar, topbar),
                 0 2px 3px -1px transparent,
@@ -4451,6 +4451,7 @@ window {
                 0 1px 6px 0 transparent;
   
     &.background:not(.about):not(.message) {
+      transition: background-image $duration $ease-out;
       background-color: transparent;
       background-image: linear-gradient(to bottom,
                                         $titlebar,
@@ -4463,6 +4464,8 @@ window {
       transition: $transition-shadow;
 
       &.background:not(.about):not(.message) {
+        transition: $transition-shadow,
+                    background-image $duration $ease-out;
         background-color: transparent;
         background-image: linear-gradient(to bottom,
                                           $titlebar-backdrop,
