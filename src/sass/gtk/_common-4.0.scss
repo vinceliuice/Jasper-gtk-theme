@@ -4443,15 +4443,17 @@ window {
   padding: 0;
 
   &.csd {
-    transition: none;
+    transition: $transition-shadow;
     border-radius: $window-radius;
     box-shadow: $shadow-z16, inset 0 1px highlight($titlebar, topbar),
-                0 2px 3px -1px transparent,
-                0 4px 3px 0 transparent,
-                0 1px 6px 0 transparent;
-  
+                0 2px 3px -1px rgba(black, 0),
+                0 4px 3px 0 rgba(black, 0),
+                0 1px 6px 0 rgba(black, 0);
+
     &.background:not(.about):not(.message) {
-      transition: background-image $duration $ease-out;
+      transition: $transition-shadow,
+                  background-color 0,
+                  background-image $duration $ease-out;
       background-color: transparent;
       background-image: linear-gradient(to bottom,
                                         $titlebar,
@@ -4459,13 +4461,14 @@ window {
                                         $background $large-size,
                                         $background);
     }
-  
+
     &:backdrop {
       transition: $transition-shadow;
 
       &.background:not(.about):not(.message) {
-        transition: $transition-shadow,
-                    background-image $duration $ease-out;
+      transition: $transition-shadow,
+                  background-color 0,
+                  background-image $duration $ease-out;
         background-color: transparent;
         background-image: linear-gradient(to bottom,
                                           $titlebar-backdrop,
@@ -4479,9 +4482,9 @@ window {
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
       box-shadow: $shadow-z4, inset 0 1px highlight($titlebar-backdrop, topbar),
-                  0 8px 6px -5px transparent,
-                  0 16px 15px 2px transparent,
-                  0 6px 18px 5px transparent;
+                  0 8px 6px -5px rgba(black, 0),
+                  0 16px 15px 2px rgba(black, 0),
+                  0 6px 18px 5px rgba(black, 0);
     }
   
     &.dialog.message {
