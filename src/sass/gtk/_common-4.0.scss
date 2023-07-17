@@ -1767,12 +1767,14 @@ pathbar > button {
   padding-right: ($medium-size - 24px) / 2;
   border-radius: $corner-radius;
   background-color: $overlay-focus;
+  box-shadow: none;
 
   &:disabled { background-color: $overlay-normal; }
 
   &:checked {
     background-color: $overlay-focus-hover;
     color: $text;
+    box-shadow: none;
   }
 
   label, image {

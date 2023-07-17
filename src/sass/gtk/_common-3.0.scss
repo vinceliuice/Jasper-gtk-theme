@@ -1466,6 +1466,7 @@ headerbar {
   margin-left: 1px;
   margin-right: 1px;
   background-color: $overlay-focus;
+  box-shadow: none;
 
   &:disabled { background-color: $overlay-normal; }
 
@@ -1482,6 +1483,7 @@ headerbar {
   &:checked {
     background-color: $overlay-focus-hover;
     color: $text;
+    box-shadow: none;
   }
 
   label, image {

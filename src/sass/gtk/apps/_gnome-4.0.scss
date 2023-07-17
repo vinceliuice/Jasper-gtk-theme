@@ -356,15 +356,25 @@ datechooser.view {
 // Gnome Software
 //
 
-flowboxchild > button.card {
-  &.category-tile {
-    padding: $space-size * 3.5;
+flowboxchild {
+  &.card {
+    background: none;
+    box-shadow: none;
+    padding: 0;
     border: none;
-    border-radius: $corner-radius;
   }
 
-  &.category-tile-iconless {
-    padding: $space-size * 1.5 $space-size * 2.5;
+  > button.card {
+    &.category-tile {
+      padding: $space-size * 3.5;
+      border: none;
+      border-radius: $corner-radius;
+    }
+
+    &.category-tile-iconless {
+      padding: $space-size * 1.5 $space-size * 2.5;
+      box-shadow: none;
+    }
   }
 }
 
@@ -431,11 +441,13 @@ carousel.card {
   }
 }
 
-screenshot-carousel box.frame.view {
-  border-width: 1px 0;
-  border-radius: 0;
+screenshot-carousel {
+  > stack > .frame.view {
+    border-width: 1px 0;
+    border-radius: 0;
+    margin: $space-size 0;
+  }
 }
-
 
 /* Styling for specific category buttons. */
 .category-tile.category-create {
@@ -522,12 +534,6 @@ screenshot-carousel box.frame.view {
     background-color: darken(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
              linear-gradient(90deg, $border 1px, transparent 1px);
-  }
-}
-
-screenshot-carousel {
-  > stack > .frame.view {
-    margin: $space-size $space-size * 2;
   }
 }
 
