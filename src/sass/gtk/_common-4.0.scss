@@ -2063,6 +2063,7 @@ popover.background {
     background-color: $surface;
     border: none;
     box-shadow: $shadow-z4;
+    color: $text;
 
     &:backdrop {
       box-shadow: $shadow-z3;
