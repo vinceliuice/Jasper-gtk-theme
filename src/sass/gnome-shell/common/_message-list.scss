@@ -12,7 +12,8 @@
   &:rtl { margin-right: 0; margin-left: 0; padding-left: 0; border-left-width: 0; }
 
   .message-list-placeholder {
-    spacing: $base_spacing * 2;
+    @extend %title_2;
+    color: $text-secondary-disabled;
 
     // icon size and color
     > StIcon {
@@ -56,8 +57,8 @@
 
     // fallback
     > .fallback-app-icon {
-      width: 16px;
-      height: 16px;
+      width: $base_icon_size;
+      height: $base_icon_size;
     }
   }
 
@@ -67,8 +68,7 @@
     > .event-time {
       color: $text-disabled;
       @include fontsize($font_size - 2);
-      text-align: right;
-      padding-bottom: 0.12em;
+      padding-bottom: 0.13em;
 
       &:ltr { text-align: right; }
       &:rtl { text-align: left; }
@@ -78,6 +78,7 @@
   .message-title {
     color: $text;
     font-weight: bold;
+    padding-top: 0.57em;
   }
 
   .message-content {
@@ -127,15 +128,15 @@
 
 // album-art
 .media-message-cover-icon {
-  icon-size: 48px !important;
+  icon-size: $base_icon_size * 3 !important;
   border-radius: $base_radius;
 
   &.fallback {
-    icon-size: 32px !important;
+    icon-size: $base_icon_size * 2 !important;
     border: none;
     border-radius: $base_radius;
     background-color: $divider;
     color: $text-disabled;
-    padding: $base_padding * 3;
+    padding: $base_padding * 2;
   }
 }
