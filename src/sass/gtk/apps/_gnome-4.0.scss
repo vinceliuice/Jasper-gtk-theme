@@ -755,23 +755,37 @@ menubutton stack > box {
 //
 
 flowboxchild {
-  &.card {
+  .card &.card {
     background: none;
     box-shadow: none;
     padding: 0;
     border: none;
   }
+}
 
-  > button.card {
-    &.category-tile {
-      padding: $space-size * 3.5;
-      border: none;
-      border-radius: $corner-radius;
-    }
+button.card,
+flowboxchild.card {
+  &.category-tile {
+    padding: $space-size * 3.5;
+    border: none;
+    border-radius: $corner-radius;
+    min-width: 140px;
+    font-weight: 900;
+    font-size: larger;
+  }
 
-    &.category-tile-iconless {
-      padding: $space-size * 1.5 $space-size * 2.5;
-      box-shadow: none;
+  &.category-tile-iconless {
+    padding: $space-size * 1.5 $space-size * 2.5;
+    box-shadow: none;
+    min-width: 130px;
+    font-size: 105%;
+    font-weight: normal;
+  }
+
+  &:not(.category-tile-iconless) {
+    &, &:active {
+      transition: $transition;
+      animation: none;
     }
   }
 }
@@ -918,25 +932,32 @@ screenshot-carousel {
   color: #1c71d8;
   background-color:#fdf8d7;
   background-image: linear-gradient($border 1px, transparent 1px),
-           linear-gradient(90deg, $border 1px, transparent 1px);
+                    linear-gradient(90deg, $border 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
   background-position: -1px -4px, center -1px;
+  background-repeat: repeat;
 
   &:hover {
     background-color: lighten(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-             linear-gradient(90deg, $border 1px, transparent 1px);
+                      linear-gradient(90deg, $border 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px;
+    background-position: -1px -4px, center -1px;
+    background-repeat: repeat;
   }
 
   &:active {
     background-color: darken(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-             linear-gradient(90deg, $border 1px, transparent 1px);
+                      linear-gradient(90deg, $border 1px, transparent 1px);
+    background-size: 10px 10px, 10px 10px;
+    background-position: -1px -4px, center -1px;
+    background-repeat: repeat;
   }
 }
 
 //
-// Leaflets
+// Gnome control center
 //
 
 window > contents > leaflet { // Gnome control center

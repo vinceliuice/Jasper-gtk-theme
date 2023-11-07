@@ -228,12 +228,21 @@ overlay-split-view {
   @include transition-shadows($frame);
 }
 
+toolbarview.undershoot-top scrolledwindow {
+  @include undershoot(top);
+}
+
+toolbarview.undershoot-bottom scrolledwindow {
+  @include undershoot(bottom);
+}
+
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
 .sidebar-pane {
   background-color: $base-alt;
   color: $text;
+  border-top-left-radius: $window-radius;
 
   &:backdrop {
     background-color: $background;
@@ -303,15 +312,37 @@ overlay-split-view {
 
   &:dir(ltr), &.end:dir(rtl) {
     &, banner > revealer > widget {
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($base-alt);
       border-right: 1px solid $border;
     }
   }
 
   &:dir(rtl), &.end:dir(ltr) {
     &, banner > revealer > widget {
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($base-alt);
       border-left: 1px solid $border;
+    }
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    border-radius: 0;
+
+    &:dir(ltr), &.end:dir(rtl) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+      }
+    }
+  
+    &:dir(rtl), &.end:dir(ltr) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+      }
     }
   }
 }
@@ -321,6 +352,7 @@ overlay-split-view {
 .sidebar-pane .content-pane {
   background-color: $base;
   color: $text;
+  border-radius: 0;
 
   &:backdrop {
     background-color: $background;
@@ -373,15 +405,37 @@ overlay-split-view {
 
   &:dir(ltr), &.end:dir(rtl) {
     &, banner > revealer > widget {
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($base);
       border-right: 1px solid $border;
     }
   }
 
   &:dir(rtl), &.end:dir(ltr) {
     &, banner > revealer > widget {
-      box-shadow: none;
+      box-shadow: inset 0 1px highlight($base);
       border-left: 1px solid $border;
+    }
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    border-radius: 0;
+
+    &:dir(ltr), &.end:dir(rtl) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+      }
+    }
+  
+    &:dir(rtl), &.end:dir(ltr) {
+      &, banner > revealer > widget {
+        box-shadow: none;
+      }
     }
   }
 }
@@ -394,16 +448,33 @@ overlay-split-view {
 .content-pane {
   background-color: $background;
   color: $text;
+  border-top-right-radius: $window-radius;
+  box-shadow: inset 0 1px highlight($background);
 
   headerbar {
     &, &:backdrop {
       background-color: transparent;
       box-shadow: none;
+      border: none;
     }
+  }
+
+  .maximized &,
+  .fullscreen &,
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left & {
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
 .top-bar {
+  background: none;
+  box-shadow: none;
+
   .collapse-spacing {
     padding: 0;
   }
