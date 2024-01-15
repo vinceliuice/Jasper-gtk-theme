@@ -4516,10 +4516,9 @@ window {
   &.csd {
     transition: $transition-shadow;
     border-radius: $window-radius;
-    box-shadow: $shadow-z16, inset 0 1px highlight($titlebar, topbar),
-                0 2px 3px -1px rgba(black, 0),
-                0 4px 3px 0 rgba(black, 0),
-                0 1px 6px 0 rgba(black, 0);
+    box-shadow: $shadow-z16,
+                inset 0 1px highlight($titlebar, topbar),
+                0 0 36px;
 
     &.background:not(.about):not(.message) {
       transition: $transition-shadow,
@@ -4552,10 +4551,9 @@ window {
       // change when we go to backdrop, to prevent jumping windows.
       // The biggest shadow should be in the same order then in the active state
       // or the jumping will happen during the transition.
-      box-shadow: $shadow-z4, inset 0 1px highlight($titlebar-backdrop, topbar),
-                  0 8px 6px -5px rgba(black, 0),
-                  0 16px 15px 2px rgba(black, 0),
-                  0 6px 18px 5px rgba(black, 0);
+      box-shadow: $shadow-z4,
+                  inset 0 1px highlight($titlebar-backdrop, topbar),
+                  0 0 36px;
     }
   
     &.dialog.message {
