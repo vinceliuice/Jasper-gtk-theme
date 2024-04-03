@@ -4007,7 +4007,8 @@ filechooserbutton:drop(active) {
     color: inherit;
   }
 
-  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
+  paned &,
+  .sidebar-pane & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border: none; }}
 }
 
 stacksidebar {
