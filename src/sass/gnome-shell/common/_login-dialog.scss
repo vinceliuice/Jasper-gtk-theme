@@ -142,7 +142,7 @@
 }
 
 .user-widget.horizontal .user-widget-label {
-  @include fontsize($font_size + 2);
+  @include fontsize($base_font_size + 2pt);
   font-weight: bold;
   padding-left: 15px;
 
@@ -151,7 +151,7 @@
 }
 
 .user-widget.vertical .user-widget-label {
-  @include fontsize($font_size + 5);
+  @include fontsize($base_font_size + 5pt);
   text-align: center;
   font-weight: normal;
   padding-top: 16px;
@@ -170,6 +170,6 @@
 
 .login-dialog-prompt-label {
   color: on(black, secondary);
-  @include fontsize($font_size + 1);
+  @include fontsize($base_font_size + 1pt);
   padding-top: 1em;
 }

@@ -10,7 +10,7 @@
   transition-duration: 250ms;
   border: none;
   box-shadow: none;
-  @include fontsize($font_size - 1);
+  @include fontsize($base_font_size - 1pt);
 
   // the rounded outset corners
   .panel-corner {

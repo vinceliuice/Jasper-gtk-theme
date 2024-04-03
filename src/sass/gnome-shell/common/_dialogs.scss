@@ -30,7 +30,7 @@
 }
 
 .headline {
-  @include fontsize($font_size + 1);
+  @include fontsize($base_font_size + 1pt);
 }
 
 // modal dialog
@@ -120,7 +120,7 @@
       .dialog-list-item-title { font-weight: bold; }
       .dialog-list-item-description {
         color: $text-secondary;
-        @include fontsize($font_size - 1);
+        @include fontsize($base_font_size - 1pt);
       }
     }
   }
@@ -137,7 +137,7 @@
   .run-dialog-description {
     text-align: center;
     color: $text-secondary;
-    @include fontsize($font_size - 1);
+    @include fontsize($base_font_size - 1pt);
   }
 }
 
@@ -177,7 +177,7 @@
 .prompt-dialog-info-label,
 .prompt-dialog-null-label {
   text-align: center;
-  @include fontsize($font_size - 1);
+  @include fontsize($base_font_size - 1pt);
   margin: $base_padding;
 }
 

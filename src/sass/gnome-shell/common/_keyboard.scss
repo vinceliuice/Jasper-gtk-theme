@@ -30,7 +30,7 @@ $default_key_bg_color: if($variant == 'light', #adb3bc, #4b4b4b);
 
 // the keys
 .keyboard-key {
-  @include fontsize($font_size + 5);
+  @include fontsize($base_font_size + 5pt);
   font-weight: bold;
   min-height: $key_size;
   min-width: $key_size;

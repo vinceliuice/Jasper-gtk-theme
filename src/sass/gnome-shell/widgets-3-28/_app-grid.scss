@@ -135,7 +135,7 @@ $app_icon_spacing: 6px;
 .app-folder-popup-bin { padding: 5px; }
 
 .no-frequent-applications-label {
-  @include fontsize($font_size - 2);
+  @include fontsize($base_font_size - 2pt);
   color: on(black, disabled);
 }
 

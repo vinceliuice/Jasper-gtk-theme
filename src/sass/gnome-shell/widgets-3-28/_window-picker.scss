@@ -15,7 +15,7 @@
   padding: $base_padding / 2 $base_padding * 2;
   border: none;
   font-weight: normal;
-  @include fontsize($font_size - 1);
+  @include fontsize($base_font_size - 1pt);
 }
 
 .window-clone-border {

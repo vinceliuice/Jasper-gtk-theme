@@ -67,7 +67,7 @@
 
 // counter
 .summary-source-counter {
-  font-size: fontsize($font_size - 1);
+  font-size: fontsize($base_font_size - 1pt);
   font-weight: bold;
   height: 1.6em; width: 1.6em;
   -shell-counter-overlap-x: 3px;

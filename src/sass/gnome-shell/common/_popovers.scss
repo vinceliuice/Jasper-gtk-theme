@@ -23,7 +23,7 @@
   box-shadow: none;
   border: none;
   margin: 0 $base_padding / 2;
-  @include fontsize($font_size - 1);
+  @include fontsize($base_font_size - 1pt);
 
   .popup-menu-content {
     padding: $base_padding;

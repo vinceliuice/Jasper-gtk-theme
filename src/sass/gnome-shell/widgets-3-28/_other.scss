@@ -177,11 +177,11 @@
 }
 
 .screen-shield-clock-time {
-  @include fontsize($font_size - 4);
+  @include fontsize($base_font_size - 4pt);
   text-shadow: none;
 }
 
-.screen-shield-clock-date { @include fontsize($font_size - 2); }
+.screen-shield-clock-date { @include fontsize($base_font_size - 2pt); }
 
 .screen-shield-notifications-container {
   spacing: $base_spacing;

@@ -67,7 +67,7 @@
 
     > .event-time {
       color: $text-disabled;
-      @include fontsize($font_size - 2);
+      @include fontsize($base_font_size - 2pt);
       padding-bottom: 0.13em;
 
       &:ltr { text-align: right; }
