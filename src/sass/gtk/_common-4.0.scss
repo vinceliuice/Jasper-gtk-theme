@@ -4519,7 +4519,7 @@ window {
     border-radius: $window-radius;
     box-shadow: $shadow-z16,
                 inset 0 1px highlight($titlebar, topbar),
-                0 0 36px;
+                0 0 36px transparent;
 
     &.background:not(.about):not(.message) {
       transition: $transition-shadow,
@@ -4554,7 +4554,7 @@ window {
       // or the jumping will happen during the transition.
       box-shadow: $shadow-z4,
                   inset 0 1px highlight($titlebar-backdrop, topbar),
-                  0 0 36px;
+                  0 0 36px transparent;
     }
   
     &.dialog.message {
