@@ -25,7 +25,7 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
 
 // Stage
 stage {
-  @include fontsize($base_font_size);
+  @include fontsize($font_size);
   color: $text;
 }
 
