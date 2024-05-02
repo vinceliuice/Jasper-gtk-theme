@@ -20,6 +20,10 @@ $nautilus-item-radius: $window-radius - $space-size;
       }
     }
 
+    .content-pane {
+      background-color: $base;
+    }
+
     flap {
       background-color: $titlebar;
 
@@ -98,7 +102,9 @@ $nautilus-item-radius: $window-radius - $space-size;
     list {
       background-color: transparent;
     }
+  }
 
+  &:not(.view) placesview {
     actionbar {
       background-color: transparent;
 
@@ -108,7 +114,7 @@ $nautilus-item-radius: $window-radius - $space-size;
     }
   }
 
-  placesview,
+  &:not(.view) placesview,
   .nautilus-grid-view.view,
   .nautilus-list-view.view {
     background-color: $nautilus;
@@ -166,7 +172,7 @@ $nautilus-item-radius: $window-radius - $space-size;
     }
   }
 
-  .nautilus-list-view.view {
+  .nautilus-list-view {
     .view {
       background-color: transparent;
 
@@ -233,7 +239,7 @@ $nautilus-item-radius: $window-radius - $space-size;
     min-height: 32px;
     padding: 0;
     margin: $space-size;
-    border-style: none;
+    border: none;
     border-radius: $window-radius - $space-size * 2;
     background-color: $primary;
     color: on($primary);
@@ -245,6 +251,10 @@ $nautilus-item-radius: $window-radius - $space-size;
 
       @extend %small-button;
     }
+  }
+
+  &.view .floating-bar {
+    border-radius: $window-radius - $space-size;
   }
 }
 
