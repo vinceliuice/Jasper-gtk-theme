@@ -14,8 +14,12 @@ ctype=
 window=
 
 # Destination directory
-if [ "$UID" -eq "$ROOT_UID" ]; then
+if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
+elif [[ -n "$XDG_DATA_HOME" ]]; then
+  DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.local/share/themes" ]]; then
+  DEST_DIR="$HOME/.local/share/themes"
 else
   DEST_DIR="$HOME/.themes"
 fi
@@ -535,21 +539,37 @@ uninstall() {
   local theme="${3}"
   local color="${4}"
   local size="${5}"
-  local ctype="${6}"
+  local scheme="${6}"
 
   local THEME_DIR="${1}/${2}${3}${4}${5}${6}"
 
   if [[ -d "${THEME_DIR}" ]]; then
     echo -e "Uninstall ${THEME_DIR}... "
-    rm -rf "${THEME_DIR}"
+    rm -rf "${THEME_DIR}"{'','-hdpi','-xhdpi'}
   fi
 }
 
 uninstall_theme() {
-  for theme in "${themes[@]}"; do
-    for color in "${colors[@]}"; do
-      for size in "${sizes[@]}"; do
-        uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype"
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for color in "${COLOR_VARIANTS[@]}"; do
+      for size in "${SIZE_VARIANTS[@]}"; do
+        for scheme in '' '-nord' '-dracula'; do
+          uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
+      done
+    done
+  done
+}
+
+clean_theme() {
+  local dest="$HOME/.themes"
+
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for color in "${COLOR_VARIANTS[@]}"; do
+      for size in "${SIZE_VARIANTS[@]}"; do
+        for scheme in '' '-Nord' '-Dracula'; do
+          uninstall "${dest}" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
       done
     done
   done
@@ -578,7 +598,7 @@ if [[ "$uninstall" == 'true' ]]; then
     echo && uninstall_theme && uninstall_link
   fi
 else
-  install_package && tweaks_temp && gnome_shell_version && install_theme
+  install_package && tweaks_temp && gnome_shell_version && clean_theme && install_theme
   if [[ "$libadwaita" == 'true' ]]; then
     uninstall_link && link_theme
   fi
