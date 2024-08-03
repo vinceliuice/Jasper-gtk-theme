@@ -8,10 +8,16 @@ $nautilus-item-radius: $window-radius - $space-size;
 
 .nautilus-window {
   &.background.csd {
-    background-color: $titlebar;
+    &:not(.about):not(.message) {
+      background-color: $titlebar;
 
-    &:backdrop {
-      background-color: $titlebar-backdrop;
+      &, &:backdrop {
+        background-image: none;
+      }
+
+      &:backdrop {
+        background-color: $titlebar-backdrop;
+      }
     }
 
     headerbar {
@@ -20,8 +26,29 @@ $nautilus-item-radius: $window-radius - $space-size;
       }
     }
 
+    .sidebar-pane,
     .content-pane {
-      background-color: $base;
+      background-color: transparent;
+
+      &:backdrop {
+        background-color: transparent;
+      }
+    }
+
+    .sidebar-pane {
+      &:dir(ltr), &.end:dir(rtl) {
+        &, banner > revealer > widget {
+          box-shadow: none;
+          border-right: none;
+        }
+      }
+
+      &:dir(rtl), &.end:dir(ltr) {
+        &, banner > revealer > widget {
+          box-shadow: none;
+          border-left: none;
+        }
+      }
     }
 
     flap {
@@ -38,17 +65,19 @@ $nautilus-item-radius: $window-radius - $space-size;
       }
     }
 
-    flap.unfolded > placessidebar {
+    flap.unfolded > placessidebar,
+    .sidebar-pane > toolbarview > placessidebar {
       background: none;
       color: $titlebar-text-secondary;
 
-      > scrolledwindow > viewport {
+      > scrolledwindow {
         margin: 1px $space-size / 2 $space-size $space-size;
-        border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius;
         background-color: $nautilus-sidebar;
         box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($titlebar);
 
-        > list.navigation-sidebar {
+        &, undershoot { border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius; }
+
+        > viewport > list.navigation-sidebar {
           background: none;
           color: $titlebar-text-secondary;
 
@@ -79,7 +108,7 @@ $nautilus-item-radius: $window-radius - $space-size;
       scrollbar {
         background: none;
         border: none;
-        margin: 0 $space-size / 2 $space-size 0;
+        margin: 0;
 
         > range > trough {
           > slider {
@@ -99,12 +128,10 @@ $nautilus-item-radius: $window-radius - $space-size;
   placesview {
     label { color: $text-secondary; }
 
-    list {
+    list, .toolbar {
       background-color: transparent;
     }
-  }
 
-  &:not(.view) placesview {
     actionbar {
       background-color: transparent;
 
@@ -114,9 +141,9 @@ $nautilus-item-radius: $window-radius - $space-size;
     }
   }
 
-  &:not(.view) placesview,
-  .nautilus-grid-view.view,
-  .nautilus-list-view.view {
+  placesview,
+  .nautilus-grid-view,
+  .nautilus-list-view {
     background-color: $nautilus;
     border-radius: $nautilus-item-radius / 2 $nautilus-item-radius $nautilus-item-radius $nautilus-item-radius / 2;
     margin: 1px $space-size $space-size;
@@ -124,7 +151,8 @@ $nautilus-item-radius: $window-radius - $space-size;
   }
 
   .nautilus-grid-view {
-    gridview.view {
+    gridview.view,
+    statuspage.view {
       background-color: transparent;
     }
 
@@ -233,6 +261,19 @@ $nautilus-item-radius: $window-radius - $space-size;
         }
       }
     }
+  }
+
+  banner > revealer > widget {
+    border-radius: $nautilus-item-radius / 2 $nautilus-item-radius $nautilus-item-radius $nautilus-item-radius / 2;
+    margin: 1px $space-size $space-size;
+    box-shadow: 0 1px 2px rgba(black, 0.05), inset 0 1px highlight(mix($primary, $background, 30%));
+  }
+
+  .search-information {
+    border-radius: $nautilus-item-radius / 2;
+    padding: $space-size / 2;
+    margin: 1px $space-size $space-size;
+    box-shadow: 0 1px 2px rgba(black, 0.05), inset 0 1px highlight(mix($primary, $background, 30%));
   }
 
   .floating-bar {

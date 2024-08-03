@@ -193,6 +193,25 @@ statuspage {
   }
 }
 
+//
+// AdwBanner
+//
+
+banner > revealer > widget {
+  /* There are 2 more instances in _sidebars.css, keep in sync with that */
+  background-color: mix($primary, $background, 30%);
+  color: $text;
+  padding: $space-size;
+
+  &:backdrop {
+    background-color: mix($primary, $background, 15%);
+
+    > label, > button {
+      filter: opacity(.5);
+    }
+  }
+}
+
 
 //
 // Toasts
