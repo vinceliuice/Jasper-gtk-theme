@@ -4506,7 +4506,7 @@ window {
                 inset 0 1px highlight($titlebar, topbar),
                 0 0 36px transparent;
 
-    &.background:not(.about):not(.message) {
+    &.background:not(.about):not(.message):not(.messagedialog) {
       transition: $transition-shadow,
                   background-color 0,
                   background-image $duration $ease-out;
@@ -4521,7 +4521,7 @@ window {
     &:backdrop {
       transition: $transition-shadow;
 
-      &.background:not(.about):not(.message) {
+      &.background:not(.about):not(.message):not(.messagedialog) {
         transition: $transition-shadow,
                     background-color 0,
                     background-image $duration $ease-out;
