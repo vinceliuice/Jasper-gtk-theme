@@ -8,7 +8,7 @@ $nautilus-item-radius: $window-radius - $space-size;
 
 .nautilus-window {
   &.background.csd {
-    &:not(.about):not(.message) {
+    &:not(.about):not(.message):not(.messagedialog) {
       background-color: $titlebar;
 
       &, &:backdrop {
