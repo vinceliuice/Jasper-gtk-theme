@@ -6,7 +6,7 @@
    viewBox="0 0 400 200"
    id="svg102"
    sodipodi:docname="assets.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,20 +21,26 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
+     showgrid="true"
      showguides="true"
-     inkscape:zoom="16"
-     inkscape:cx="246.96875"
-     inkscape:cy="27.4375"
-     inkscape:window-width="1368"
-     inkscape:window-height="700"
+     inkscape:zoom="2"
+     inkscape:cx="186.75"
+     inkscape:cy="91.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1000"
      inkscape:window-x="0"
-     inkscape:window-y="32"
+     inkscape:window-y="44"
      inkscape:window-maximized="1"
-     inkscape:current-layer="path1465">
+     inkscape:current-layer="layer2">
     <inkscape:grid
        type="xygrid"
-       id="grid1087" />
+       id="grid1087"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
   </sodipodi:namedview>
   <defs
      id="defs40">
@@ -124,7 +130,12 @@
          id="stop22" />
     </linearGradient>
     <linearGradient
-       id="color-surface-dark">
+       id="color-surface-dark"
+       x1="0"
+       y1="0"
+       x2="40"
+       y2="0"
+       gradientUnits="userSpaceOnUse">
       <stop
          stop-color="#3C3C3C"
          offset="1"
@@ -146,7 +157,7 @@
     </linearGradient>
     <linearGradient
        id="color-base"
-       gradientTransform="matrix(1.5569334,0,0,1.8799593,-1.5300724,-1.3662805)"
+       gradientTransform="matrix(1.5569334,0,0,1.8799593,-1.5300724,-0.36628051)"
        x1="4.4114838"
        y1="1.5613714"
        x2="21.960966"
@@ -174,7 +185,7 @@
        inkscape:collect="always"
        xlink:href="#color-background"
        id="linearGradient1243"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,0.99999973)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
@@ -184,7 +195,7 @@
        inkscape:collect="always"
        xlink:href="#color-background"
        id="linearGradient1245"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,0.99999973)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
@@ -195,7 +206,7 @@
        xlink:href="#color-on-primary-light"
        id="linearGradient1247"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.1452981,0.87313514)"
+       gradientTransform="matrix(1.1452981,0,0,0.87313514,0,0.9999996)"
        x1="6.2123566"
        y1="11.893921"
        x2="29.250027"
@@ -208,7 +219,8 @@
        x1="0"
        y1="0"
        x2="40"
-       y2="0" />
+       y2="0"
+       gradientTransform="translate(0,0.9999996)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#color-primary-dark"
@@ -217,7 +229,8 @@
        x1="0"
        y1="0"
        x2="40"
-       y2="0" />
+       y2="0"
+       gradientTransform="translate(0,0.99999999)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#color-primary-light"
@@ -226,12 +239,13 @@
        x1="0"
        y1="0"
        x2="40"
-       y2="0" />
+       y2="0"
+       gradientTransform="translate(0,0.99999999)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#color-surface-dark"
        id="linearGradient1371"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,0.99999999)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
@@ -241,7 +255,7 @@
        inkscape:collect="always"
        xlink:href="#color-background-dark"
        id="linearGradient1373"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,1.0000001)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
@@ -251,7 +265,7 @@
        inkscape:collect="always"
        xlink:href="#color-background-dark"
        id="linearGradient1375"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,1.0000001)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
@@ -262,7 +276,7 @@
        xlink:href="#color-on-primary-dark"
        id="linearGradient1377"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="scale(1.1452981,0.87313514)"
+       gradientTransform="matrix(1.1452981,0,0,0.87313514,0,1.0000001)"
        x1="6.2123566"
        y1="11.893921"
        x2="29.250027"
@@ -271,12 +285,25 @@
        inkscape:collect="always"
        xlink:href="#color-surface-dark"
        id="linearGradient1379"
-       gradientTransform="scale(0.91004063,1.098852)"
+       gradientTransform="matrix(0.91004063,0,0,1.098852,0,1.0000001)"
        x1="7.7160772"
        y1="1.8870363"
        x2="34.0403"
        y2="1.8870363"
        gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter3"
+       x="-0.1622443"
+       y="-0.13437432"
+       width="1.3244886"
+       height="1.2687486">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.6195344"
+         id="feGaussianBlur3" />
+    </filter>
   </defs>
   <g
      inkscape:groupmode="layer"
@@ -304,66 +331,71 @@
      inkscape:label="assets">
     <g
        id="selectionmode-checkbox-unchecked"
-       transform="translate(20,90)">
+       transform="translate(20,118)">
       <use
          width="100%"
          height="100%"
          fill="url(#color-surface)"
          xlink:href="#base-selectionmode-checkbox"
-         id="use44" />
+         id="use44"
+         style="fill:url(#color-surface)" />
     </g>
     <g
        id="selectionmode-checkbox-checked"
-       transform="translate(68,90)">
+       transform="translate(68,118)">
       <use
          width="100%"
          height="100%"
          fill="url(#color-primary-dark)"
          xlink:href="#base-selectionmode-checkbox"
-         id="use47" />
+         id="use47"
+         style="fill:url(#color-primary-dark)" />
       <use
          width="100%"
          height="100%"
          fill="url(#color-on-primary-dark)"
          xlink:href="#base-selectionmode-checkmark"
-         id="use49" />
+         id="use49"
+         style="fill:url(#color-on-primary-dark)" />
     </g>
     <g
        id="selectionmode-checkbox-unchecked-dark"
-       transform="translate(220,90)">
+       transform="translate(220,118)">
       <use
          width="100%"
          height="100%"
          fill="url(#color-surface-dark)"
          xlink:href="#base-selectionmode-checkbox"
-         id="use54" />
+         id="use54"
+         style="fill:url(#color-surface-dark)" />
     </g>
     <g
        id="selectionmode-checkbox-checked-dark"
-       transform="translate(268,90)">
+       transform="translate(268,118)">
       <use
          width="100%"
          height="100%"
          fill="url(#color-primary-light)"
          xlink:href="#base-selectionmode-checkbox"
-         id="use57" />
+         id="use57"
+         style="fill:url(#color-primary-light)" />
       <use
          width="100%"
          height="100%"
          fill="url(#color-on-primary-light)"
          xlink:href="#base-selectionmode-checkmark"
-         id="use59" />
+         id="use59"
+         style="fill:url(#color-on-primary-light)" />
     </g>
     <g
        id="scale-horz-marks-before-slider"
        transform="translate(5,5.0000001)">
       <path
-         d="m 20.106662,3.1361009 8.485283,8.4852811 a 12,12 0 1 1 -16.970562,0 z"
-         id="path1157"
-         style="opacity:0.15;mix-blend-mode:normal;stroke-width:1.45455;filter:url(#filter1058)"
-         transform="matrix(0.979399,0,0,0.979399,-0.69244591,0.74163526)" />
+         id="path2"
+         d="M 19,3.9034394 10.527344,12.376097 C 6.8431515,16.060289 6.2166269,21.297582 7.9296875,25.432738 9.6427481,29.567892 13.790206,32.829222 19,32.829222 c 5.209794,0 9.357252,-3.26133 11.070312,-7.396484 1.713062,-4.135156 1.086537,-9.372449 -2.597656,-13.056641 z"
+         style="opacity:0.15;filter:url(#filter3)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-primary-dark)"
          stroke="url(#color-base)"
          stroke-linecap="round"
@@ -380,7 +412,7 @@
     </g>
     <use
        id="scale-horz-marks-after-slider"
-       transform="matrix(1,0,0,-1,36,44)"
+       transform="matrix(1,0,0,-1,43.666667,48)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider"
@@ -388,7 +420,7 @@
        y="0" />
     <use
        id="scale-vert-marks-before-slider"
-       transform="rotate(-90,62.5,-18.5)"
+       transform="rotate(-90,67.666667,-19.666667)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider"
@@ -396,7 +428,7 @@
        y="0" />
     <use
        id="scale-vert-marks-after-slider"
-       transform="rotate(90,91.5,87.5)"
+       transform="rotate(90,89.5,89.5)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider"
@@ -404,7 +436,7 @@
        y="0" />
     <use
        id="scale-horz-marks-after-slider-disabled"
-       transform="matrix(1,0,0,-1,41,134)"
+       transform="matrix(1,0,0,-1,43.666667,138)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled"
@@ -412,7 +444,7 @@
        y="0" />
     <use
        id="scale-vert-marks-before-slider-disabled"
-       transform="rotate(-90,65,24)"
+       transform="rotate(-90,67.666667,25.333333)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled"
@@ -420,7 +452,7 @@
        y="0" />
     <use
        id="scale-vert-marks-after-slider-disabled"
-       transform="rotate(90,94,130)"
+       transform="rotate(90,89.5,134.5)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled"
@@ -436,7 +468,7 @@
        y="0" />
     <use
        id="scale-horz-marks-after-slider-disabled-dark"
-       transform="rotate(180,260,70)"
+       transform="rotate(180,262.5,70)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled-dark"
@@ -452,7 +484,7 @@
        y="0" />
     <use
        id="scale-vert-marks-before-slider-disabled-dark"
-       transform="rotate(-90,282.5,22.5)"
+       transform="rotate(-90,285,25)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled-dark"
@@ -468,7 +500,7 @@
        y="0" />
     <use
        id="scale-vert-marks-after-slider-disabled-dark"
-       transform="rotate(90,310,135)"
+       transform="rotate(90,307.5,137.5)"
        width="100%"
        height="100%"
        xlink:href="#scale-horz-marks-before-slider-disabled-dark"
@@ -483,7 +515,7 @@
          style="opacity:0.15;mix-blend-mode:normal;stroke-width:1.45455;filter:url(#filter1058)"
          transform="matrix(0.979399,0,0,0.979399,-0.69244591,0.74163526)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.316214 6.351168,6.351168 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-background)"
          stroke="url(#color-background)"
          stroke-linecap="round"
@@ -491,7 +523,7 @@
          id="path1239"
          style="fill:url(#linearGradient1243);stroke:url(#linearGradient1245)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.3162139 6.351168,6.3511681 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-on-primary-light)"
          stroke="url(#color-surface)"
          stroke-linecap="round"
@@ -515,7 +547,7 @@
          style="opacity:0.15;mix-blend-mode:normal;stroke-width:1.45455;filter:url(#filter1058)"
          transform="matrix(0.979399,0,0,0.979399,-0.69244591,0.74163526)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-primary-light)"
          stroke="url(#color-surface-dark)"
          stroke-linecap="round"
@@ -533,7 +565,7 @@
          id="path1465">
         <path
            id="path1567"
-           d="M 7.0332031,18.523437 C 6.963657,20.27907 7.2744301,22.02179 7.9296875,23.603516 9.6427481,27.73867 13.790206,31 19,31 c 5.209794,0 9.357252,-3.26133 11.070312,-7.396484 0.655258,-1.581726 0.966031,-3.324446 0.896485,-5.080079 -0.06048,1.412944 -0.366044,2.799648 -0.896485,4.080079 C 28.357252,26.73867 24.209794,30 19,30 13.790206,30 9.6427481,26.73867 7.9296875,22.603516 7.3992467,21.323085 7.093686,19.936381 7.0332031,18.523437 Z"
+           d="M 7.0332031,19.523437 C 6.963657,21.27907 7.2744301,23.02179 7.9296875,24.603516 9.6427481,28.73867 13.790206,32 19,32 c 5.209794,0 9.357252,-3.26133 11.070312,-7.396484 0.655258,-1.581726 0.966031,-3.324446 0.896485,-5.080079 -0.06048,1.412944 -0.366044,2.799648 -0.896485,4.080079 C 28.357252,27.73867 24.209794,31 19,31 13.790206,31 9.6427481,27.73867 7.9296875,23.603516 7.3992467,22.323085 7.093686,20.936381 7.0332031,19.523437 Z"
            style="opacity:0.1;fill:#ffffff"
            sodipodi:nodetypes="cssscsssc" />
       </g>
@@ -547,7 +579,7 @@
          style="opacity:0.15;mix-blend-mode:normal;stroke-width:1.45455;filter:url(#filter1058)"
          transform="matrix(0.979399,0,0,0.979399,-0.69244591,0.74163526)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.3162144 6.351168,6.3511676 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-background-dark)"
          stroke="url(#color-background-dark)"
          stroke-linecap="round"
@@ -555,7 +587,7 @@
          id="path1345"
          style="fill:url(#linearGradient1373);stroke:url(#linearGradient1375)" />
       <path
-         d="m 19,6.3162143 6.351168,6.3511677 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
+         d="m 19,7.3162144 6.351168,6.3511676 a 8.9819072,8.9819072 0 1 1 -12.702336,0 z"
          fill="url(#color-on-primary-dark)"
          stroke="url(#color-surface-dark)"
          stroke-linecap="round"

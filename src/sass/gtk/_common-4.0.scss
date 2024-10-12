@@ -1169,7 +1169,7 @@ combobox {
    listview {
      margin: 0;
 
-     & > row {
+     > row {
        padding: $space-size;
 
        &:selected {
@@ -3527,8 +3527,7 @@ list {
   border-color: $divider;
   background-color: $base;
 
-  row { padding: $space-size; }
-
+  > row { padding: 2px; }
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
 
@@ -3566,6 +3565,8 @@ list.frame { border-radius: $corner-radius; }
 listview.view {
   color: $text;
   background-color: transparent;
+
+  > row { padding: $space-size / 2 $space-size; }
 
   popover.menu & {
     padding: 0;
@@ -3697,13 +3698,7 @@ columnview {
     padding-top: 2px;
     padding-bottom: 2px;
   }
-}
 
-treeexpander {
-  border-spacing: $space-size;
-}
-
-columnview {
   row:not(:selected) cell editablelabel {
     &:not(.editing):focus-within {
       outline: 2px solid $overlay-selected;
@@ -3718,6 +3713,10 @@ columnview {
       background-color: $primary;
     }
   }
+}
+
+treeexpander {
+  border-spacing: $space-size;
 }
 
 .rich-list { /* rich lists usually containing other widgets than just labels/text */
@@ -4052,7 +4051,7 @@ separator.sidebar {
  **********************/
 
 .navigation-sidebar {
-  padding: $space-size * 0.75 0; //only vertical padding. horizontal row size would clip
+  padding: $space-size; //only vertical padding. horizontal row size would clip
   border-right: none;
 
   &, &.view {
@@ -4065,10 +4064,12 @@ separator.sidebar {
   }
 
   > row {
-    min-height: $small-size;
-    padding: $space-size;
+    min-height: $medium-size;
+    padding: 0 $space-size;
     border-radius: $corner-radius;
-    margin: $space-size / 4 $space-size;
+    margin: 0;
+
+    + row { margin-top: $space-size / 2; }
 
     &:hover,
     &:focus-visible:focus-within {
