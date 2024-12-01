@@ -1,0 +1,44 @@
+/* Switches */
+
+$switch_width: 46px;
+$switch_handle_size: 20px;
+
+.toggle-switch {
+  width: $switch_width;
+  border-radius: $circular_radius;
+  transition-duration: 100ms;
+  color: $text;
+  background: transparentize(if($variant == 'light', black, white), .85);
+
+  &:hover {
+    background: transparentize(if($variant == 'light', black, white), .8);
+  }
+
+  StIcon {
+    icon-size: 16px;
+  }
+
+  .handle {
+    margin: 3px;
+    width: $switch_handle_size;
+    height: $switch_handle_size;
+    border-radius: $circular_radius;
+    background: white;
+    box-shadow: 0 2px 4px transparentize(black, .8);
+    transition-duration: 100ms;
+  }
+
+  &:checked {
+    background: -st-accent-color;
+    color: -st-accent-fg-color;
+
+    &:hover {
+      background-color: st-lighten(-st-accent-color, 5%);
+      color: st-lighten(-st-accent-fg-color, 5%);
+    }
+
+    .handle {
+      background: white;
+    }
+  }
+}

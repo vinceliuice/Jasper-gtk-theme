@@ -18,6 +18,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then
   DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.themes" ]]; then
+  DEST_DIR="$HOME/.themes"
 elif [[ -d "$HOME/.local/share/themes" ]]; then
   DEST_DIR="$HOME/.local/share/themes"
 else
@@ -31,10 +33,17 @@ THEME_VARIANTS=('' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Blue'
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SIZE_VARIANTS=('' '-Compact')
 
+themes=()
+colors=()
+sizes=()
+lcolors=()
+
 if [[ "$(command -v gnome-shell)" ]]; then
   gnome-shell --version
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-  if [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
+  if [[ "${SHELL_VERSION:-}" -ge "47" ]]; then
+    GS_VERSION="47-0"
+  elif [[ "${SHELL_VERSION:-}" -ge "46" ]]; then
     GS_VERSION="46-0"
   elif [[ "${SHELL_VERSION:-}" -ge "44" ]]; then
     GS_VERSION="44-0"
@@ -47,7 +56,7 @@ if [[ "$(command -v gnome-shell)" ]]; then
   fi
 else
   echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-  GS_VERSION="46-0"
+  GS_VERSION="467-0"
 fi
 
 usage() {
@@ -179,11 +188,6 @@ install() {
     cp -r "${SRC_DIR}/main/plank/theme-Dark${ctype}/"*                                       "${THEME_DIR}/plank"
   fi
 }
-
-themes=()
-colors=()
-sizes=()
-lcolors=()
 
 while [[ $# -gt 0 ]]; do
   case "${1}" in
@@ -437,8 +441,10 @@ gnome_shell_version() {
 
   sed -i "/\widgets/s/40-0/${GS_VERSION}/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
 
-  if [[ "${GS_VERSION}" == '3-28' || "${GS_VERSION}" == '46-0' ]]; then
-    sed -i "/\extensions/s/40-0/${GS_VERSION}/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+  if [[ "${GS_VERSION}" == '3-28' ]]; then
+    sed -i "/\extensions/s/40-0/3-28/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
+  elif [[ "${GS_VERSION}" -ge '46-0' ]]; then
+    sed -i "/\extensions/s/40-0/46-0/" ${SRC_DIR}/sass/gnome-shell/_common-temp.scss
   fi
 }
 
@@ -553,7 +559,7 @@ uninstall_theme() {
   for theme in "${THEME_VARIANTS[@]}"; do
     for color in "${COLOR_VARIANTS[@]}"; do
       for size in "${SIZE_VARIANTS[@]}"; do
-        for scheme in '' '-nord' '-dracula'; do
+        for scheme in '' '-Nord' '-Dracula'; do
           uninstall "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
         done
       done
@@ -562,7 +568,21 @@ uninstall_theme() {
 }
 
 clean_theme() {
-  local dest="$HOME/.themes"
+  if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
+    local dest="$HOME/.local/share/themes"
+  elif [[ "$DEST_DIR" == "$XDG_DATA_HOME/themes" || "$DEST_DIR" == "$HOME/.local/share/themes" ]]; then
+    local dest="$HOME/.themes"
+  fi
+
+  for theme in "${THEME_VARIANTS[@]}"; do
+    for color in "${COLOR_VARIANTS[@]}"; do
+      for size in "${SIZE_VARIANTS[@]}"; do
+        for scheme in '-nord' '-dracula'; do
+          uninstall "$HOME/.themes" "${name:-$THEME_NAME}" "$theme" "$color" "$size" "$scheme"
+        done
+      done
+    done
+  done
 
   for theme in "${THEME_VARIANTS[@]}"; do
     for color in "${COLOR_VARIANTS[@]}"; do

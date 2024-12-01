@@ -1,0 +1,51 @@
+/* Notifications & Message Tray */
+
+$notification_banner_height: 64px;
+$notification_banner_width: 34em;
+
+// Banner notifications
+.notification-banner {
+  min-height: $notification_banner_height;
+  width: $notification_banner_width;
+  font-size: 1em;
+  margin: $base_padding;
+  border-radius: $menu_radius;
+  padding: $base_padding;
+}
+
+.notification-buttons-bin {
+  spacing: 0;
+  padding: 0;
+}
+
+.notification-button {
+  min-height: 40px;
+  padding: 0 16px;
+  margin: 0 !important;
+  background-color: transparent;
+  color: $text-secondary;
+  font-weight: 500;
+  border: none;
+  border-radius: $base_radius;
+
+  &:focus {
+    background-color: transparent;
+    color: $text-secondary;
+    box-shadow: inset 0 0 0 2px $divider !important;
+    outline: none !important;
+  }
+
+  &:hover {
+    background-color: $divider;
+    color: $text;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  &:active, &:checked { background-color: $track; color: $text; }
+
+  &:insensitive {
+    background-color: transparent !important;
+    color: $text-secondary-disabled !important;
+  }
+}
