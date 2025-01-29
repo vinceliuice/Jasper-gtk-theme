@@ -169,6 +169,7 @@
       margin-top: 1em;
       color: $text-disabled;
       @include fontsize($font_size - 1);
+      background: none;
     }
   }
 

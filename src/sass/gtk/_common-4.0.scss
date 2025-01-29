@@ -3527,10 +3527,26 @@ list {
   border-color: $divider;
   background-color: $base;
 
-  > row { padding: 2px; }
+  > row {
+    padding: 2px;
+    background-clip: padding-box;
+  }
+
   > row.expander { padding: 0px; }
   > row.expander .row-header { padding: 2px; }
 
+  &.horizontal row.separator,
+  &.separators.horizontal > row:not(.separator) {
+    border-left: 1px solid $border;
+  }
+
+  &:not(.horizontal) row.separator,
+  &.separators:not(.horizontal) > row:not(.separator) {
+    border-bottom: 1px solid $border;
+  }
+}
+
+list {
   &.content:not(.conversation-listbox) {
     @extend %circular_list;
 
@@ -3541,16 +3557,16 @@ list {
 
   &.boxed-list {
     @extend %circular_list;
-
+  
     > row {
       @extend %circular_row;
-
+  
       &.expander {
         list {
           background-color: transparent;
           box-shadow: none;
           border: none;
-
+  
           > row {
             @extend %circular_row;
           }
@@ -3560,13 +3576,21 @@ list {
   }
 }
 
+
 list.frame { border-radius: $corner-radius; }
 
 listview.view {
   color: $text;
   background-color: transparent;
 
-  > row { padding: $space-size / 2 $space-size; }
+  > header {
+    @extend .heading;
+    padding: 2px;
+    padding-top: 18px;
+    padding-bottom: 6px;
+  }
+
+  > row { padding: $space-size $space-size * 1.5; }
 
   popover.menu & {
     padding: 0;
