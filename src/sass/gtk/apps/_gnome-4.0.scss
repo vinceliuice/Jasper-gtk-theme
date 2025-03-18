@@ -820,6 +820,8 @@ monthpopover > box {
 
 // Agenda View CSS
 agenda-view list {
+  &.background { background-color: transparent; }
+
   > row {
     padding: 2px $space-size * 2;
   }
