@@ -9,7 +9,7 @@ $notification_banner_width: 34em;
   width: $notification_banner_width;
   font-size: 1em;
   margin: $base_padding;
-  border-radius: $menu_radius;
+  border-radius: $base_radius + $base_padding * 2;
   padding: $base_padding;
 }
 

@@ -4931,7 +4931,6 @@ window {
   min-height: 16px;
   min-width: 16px;
   padding: 0;
-  margin: 0 $space-size - 2px;
 
   &.minimize, &.maximize, &.close {
     color: transparent;
@@ -4988,7 +4987,6 @@ window {
   min-height: 22px;
   min-width: 22px;
   padding: 0;
-  margin: 0 $space-size - 2px;
 
   &.minimize, &.maximize, &.close {
     color: $titlebar-text-secondary;
@@ -5041,8 +5039,22 @@ windowcontrols {
 
     @if $window_button == 'mac' {
       @extend %mac_window_button;
+      margin: ($large-size - 16px) / 2 $space-size - 2px;
     } @else {
       @extend %normal_window_button;
+      margin: ($large-size - 22px) / 2 $space-size - 2px;
+    }
+  }
+}
+
+headerbar.default-decoration windowcontrols {
+  button:not(.suggested-action):not(.destructive-action) {
+    @if $window_button == 'mac' {
+      @extend %mac_window_button;
+      margin: ($medium-size - 16px) / 2 $space-size - 2px;
+    } @else {
+      @extend %normal_window_button;
+      margin: ($medium-size - 22px) / 2 $space-size - 2px;
     }
   }
 }

@@ -9,7 +9,8 @@ $notification_banner_width: 34em;
   width: $notification_banner_width;
   font-size: 1em;
   margin: $base_padding;
-  border-radius: $menu_radius;
+  border-radius: $base_radius + $base_padding * 2;
+  padding: $base_padding;
 }
 
 .notification-buttons-bin {
@@ -26,25 +27,25 @@ $notification_banner_width: 34em;
   border-top: 1px solid $border !important;
 
   &:first-child:ltr {
-    border-radius: 0 0 0 $menu_radius;
+    border-radius: 0 0 0 $base_radius;
   }
 
   &:last-child:ltr {
-    border-radius: 0 0 $menu_radius;
+    border-radius: 0 0 $base_radius;
     margin-right: 0 !important;
   }
 
   &:first-child:rtl {
-    border-radius: 0 0 $menu_radius;
+    border-radius: 0 0 $base_radius;
   }
 
   &:last-child:rtl {
-    border-radius: 0 0 0 $menu_radius;
+    border-radius: 0 0 0 $base_radius;
     margin-left: 0 !important;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $menu_radius $menu_radius;
+    border-radius: 0 0 $base_radius $base_radius;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }

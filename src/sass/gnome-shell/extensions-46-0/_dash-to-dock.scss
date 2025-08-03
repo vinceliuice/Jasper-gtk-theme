@@ -50,7 +50,7 @@
       margin-right: 0;
       margin-top: 0;
       margin-bottom: 0;
-      padding: 0 0;
+      padding: 0;
 
       .dash-background {
         border-radius: 0;
@@ -73,7 +73,7 @@
       }
     }
 
-    .dash-item-container .app-well-app, .show-apps {
+    .overview-tile, .show-apps {
       padding: $base_padding;
     }
   }
@@ -129,7 +129,7 @@
   }
 
   &:overview #dash .show-apps,
-  &:overview #dash .app-well-app {
+  &:overview #dash .overview-tile {
     & .overview-icon {
       color: on(dark, secondary);
     }
@@ -179,13 +179,6 @@
     .dash-item-container > StButton {
       transition-duration: 250ms;
       background-size: contain;
-    }
-  }
-
-  &.shrink,
-  &.dashtodock {
-    .dash-item-container > StButton {
-       padding: 1px 2px;
     }
   }
 

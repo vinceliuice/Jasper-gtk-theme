@@ -5,13 +5,13 @@
   width: 34em;
   min-height: 64px;
   margin: 2px 5px 8px;
-  border-radius: $base_radius;
   color: $text-secondary;
   background-color: $popover;
   border: none;
   text-shadow: none;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
-  border-radius: $menu_radius;
+  border-radius: $base_radius + $base_padding * 2;
+  padding: $base_padding;
 
   &:hover {
     color: $text;
@@ -40,11 +40,11 @@
     font-weight: 500;
     border-width: 0;
 
-    &:first-child { border-radius: 0 0 0 $menu_radius; }
+    &:first-child { border-radius: 0 0 0 $base_radius; }
 
-    &:last-child { border-radius: 0 0 $menu_radius 0; }
+    &:last-child { border-radius: 0 0 $base_radius 0; }
 
-    &:only-child, &:first-child:last-child { border-radius: 0 0 $menu_radius $menu_radius; }
+    &:only-child, &:first-child:last-child { border-radius: 0 0 $base_radius $base_radius; }
 
     &:focus {
       background-color: transparent;

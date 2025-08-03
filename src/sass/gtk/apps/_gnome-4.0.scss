@@ -208,6 +208,34 @@ $nautilus-item-radius: $window-radius - $space-size;
         @extend %selected_items_color;
       }
     }
+
+    listview.view {
+      padding: 0;
+      margin: 0;
+      border-spacing: 0;
+
+      > row.activatable {
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+
+        &:selected, &:selected:focus {
+          @extend %selected_items_color;
+        }
+
+        > cell {
+          padding: 0;
+
+          > widget#NautilusViewCell {
+            padding: $space-size / 2 $space-size * 1.5;
+          }
+        }
+
+        &:nth-child(odd):not(:hover):not(:active):not(:selected):not(:disabled) {
+          background-image: image(rgba($text, 0.03));
+        }
+      }
+    }
   }
 
   tabbar {
