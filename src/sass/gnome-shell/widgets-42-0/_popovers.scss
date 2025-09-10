@@ -3,8 +3,8 @@
   .popup-menu-item {
     padding: $base_padding $base_padding * 2;
 
-    &:ltr { padding-right: $base_padding * 1.5; padding-left: $base_padding; }
-    &:rtl { padding-right: $base_padding; padding-left: $base_padding * 1.5; }
+    &:ltr { padding-right: $base_padding * 1.5; padding-left: $base_padding * 2; }
+    &:rtl { padding-right: $base_padding * 2; padding-left: $base_padding * 1.5; }
   }
 }
 

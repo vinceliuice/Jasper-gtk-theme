@@ -117,13 +117,25 @@
   }
 }
 
+.popup-ornamented-menu-item {
+  &:ltr {
+    padding-left: $base_padding;
+  }
+
+  &:rtl {
+    padding-right: $base_padding;
+  }
+}
+
 // symbolic icons in popover
 .popup-menu-arrow,
 .popup-menu-icon { icon-size: $base_icon_size; }
 
 // container for radio and check boxes
 .popup-menu-ornament {
-  width: 1.2em;
+  // width: 1.2em;
+  icon-size: $base_icon_size !important;
+  width: $base_icon_size;
 
   &:ltr { text-align: right; }
   &:rtl { text-align: left; }
@@ -144,5 +156,26 @@
     padding: 0;
     margin: 0 $base_padding / 2;
     -st-icon-style: symbolic;
+  }
+}
+
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
+
+  .popup-inactive-menu-item:first-child {
+
+    // "Open Windows" label
+    > StLabel {
+      @extend %caption_heading;
+
+      &:ltr {
+        margin-right: $base_margin * 2;
+      }
+
+      &:rtl {
+        margin-left: $base_margin * 2;
+      }
+    }
   }
 }

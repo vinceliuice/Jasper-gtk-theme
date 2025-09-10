@@ -1,4 +1,3 @@
-
 //
 // avatar
 //
@@ -12,22 +11,21 @@ avatar {
   // There are 8 different colors for avtars in the list if you change the number of them you
   // need to update the NUMBER_OF_COLORS in src/adw-avatar.c.
   // The 2D list has this form: ((font-color, gradient-top-color, gradient-bottom-color)).
-  $avatarcolorlist: (
-   (#cfe1f5, #83b6ec, #337fdc), // blue
-   (#caeaf2, #7ad9f1, #0f9ac8), // cyan
-   (#cef8d8, #8de6b1, #29ae74), // green
-   (#e6f9d7, #b5e98a, #6ab85b), // lime
-   (#f9f4e1, #f8e359, #d29d09), // yellow
-   (#ffead1, #ffcb62, #d68400), // gold
-   (#ffe5c5, #ffa95a, #ed5b00), // orange
-   (#f8d2ce, #f78773, #e62d42), // raspberry
-   (#fac7de, #e973ab, #e33b6a), // magenta
-   (#e7c2e8, #cb78d4, #9945b5), // purple
-   (#d5d2f5, #9e91e8, #7a59ca), // violet
-   (#f2eade, #e3cf9c, #b08952), // beige
-   (#e5d6ca, #be916d, #785336), // brown
-   (#d8d7d3, #c0bfbc, #6e6d71), // gray
-  );
+  $avatarcolorlist: ((#cfe1f5, #83b6ec, #337fdc), // blue
+      (#caeaf2, #7ad9f1, #0f9ac8), // cyan
+      (#cef8d8, #8de6b1, #29ae74), // green
+      (#e6f9d7, #b5e98a, #6ab85b), // lime
+      (#f9f4e1, #f8e359, #d29d09), // yellow
+      (#ffead1, #ffcb62, #d68400), // gold
+      (#ffe5c5, #ffa95a, #ed5b00), // orange
+      (#f8d2ce, #f78773, #e62d42), // raspberry
+      (#fac7de, #e973ab, #e33b6a), // magenta
+      (#e7c2e8, #cb78d4, #9945b5), // purple
+      (#d5d2f5, #9e91e8, #7a59ca), // violet
+      (#f2eade, #e3cf9c, #b08952), // beige
+      (#e5d6ca, #be916d, #785336), // brown
+      (#d8d7d3, #c0bfbc, #6e6d71), // gray
+    );
 
   @for $i from 1 through length($avatarcolorlist) {
     &.color#{$i} {
@@ -37,9 +35,13 @@ avatar {
     }
   }
 
-  &.contrasted { color: white; }
+  &.contrasted {
+    color: white;
+  }
 
-  &.image { background: none; }
+  &.image {
+    background: none;
+  }
 }
 
 //
@@ -228,15 +230,22 @@ toast {
   color: on($osd);
   border: none;
 
-  &:dir(ltr) { padding-left: $space-size * 2; }
-  &:dir(rtl) { padding-right: $space-size * 2; }
+  &:dir(ltr) {
+    padding-left: $space-size * 2;
+  }
+
+  &:dir(rtl) {
+    padding-right: $space-size * 2;
+  }
 
   > label {
     margin: 0 $space-size;
   }
 
   button, button.text-button,
-  button.circular.flat { @extend %button-on-dark; }
+  button.circular.flat {
+    @extend %button-on-dark;
+  }
 }
 
 // Transition shadows
@@ -256,7 +265,9 @@ toolbarview.undershoot-bottom scrolledwindow {
 }
 
 // Sidebar
-.unfolded stacksidebar.sidebar { border: none; }
+.unfolded stacksidebar.sidebar {
+  border: none;
+}
 
 .sidebar-pane {
   background-color: $base-alt;
@@ -304,13 +315,23 @@ toolbarview.undershoot-bottom scrolledwindow {
     }
 
     &.undershoot-start {
-      &:dir(ltr) { @include undershoot(left, $style: solid); }
-      &:dir(rtl) { @include undershoot(right, $style: solid); }
+      &:dir(ltr) {
+        @include undershoot(left, $style: solid);
+      }
+
+      &:dir(rtl) {
+        @include undershoot(right, $style: solid);
+      }
     }
 
     &.undershoot-end {
-      &:dir(ltr) { @include undershoot(right, $style: solid); }
-      &:dir(rtl) { @include undershoot(left, $style: solid); }
+      &:dir(ltr) {
+        @include undershoot(right, $style: solid);
+      }
+
+      &:dir(rtl) {
+        @include undershoot(left, $style: solid);
+      }
     }
   }
 
@@ -358,7 +379,7 @@ toolbarview.undershoot-bottom scrolledwindow {
         box-shadow: none;
       }
     }
-  
+
     &:dir(rtl), &.end:dir(ltr) {
       &, banner > revealer > widget {
         box-shadow: none;
@@ -423,7 +444,7 @@ toolbarview.undershoot-bottom scrolledwindow {
         box-shadow: none;
       }
     }
-  
+
     &:dir(rtl), &.end:dir(ltr) {
       &, banner > revealer > widget {
         box-shadow: none;
@@ -453,13 +474,23 @@ toolbarview.undershoot-bottom scrolledwindow {
     }
 
     &.undershoot-start {
-      &:dir(ltr) { @include undershoot(left, $style: solid); }
-      &:dir(rtl) { @include undershoot(right, $style: solid); }
+      &:dir(ltr) {
+        @include undershoot(left, $style: solid);
+      }
+
+      &:dir(rtl) {
+        @include undershoot(right, $style: solid);
+      }
     }
 
     &.undershoot-end {
-      &:dir(ltr) { @include undershoot(right, $style: solid); }
-      &:dir(rtl) { @include undershoot(left, $style: solid); }
+      &:dir(ltr) {
+        @include undershoot(right, $style: solid);
+      }
+
+      &:dir(rtl) {
+        @include undershoot(left, $style: solid);
+      }
     }
   }
 }
@@ -495,34 +526,97 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 }
 
-.top-bar {
-  background: none;
-  box-shadow: none;
+/******************
+ * AdwToolbarView *
+ ******************/
+toolbarview {
 
-  .collapse-spacing {
-    padding: 0;
+  > .top-bar,
+  > .bottom-bar {
+    // headerbar {
+    //   background: none;
+    //   box-shadow: none;
+    //   border: none;
+    // }
+
+    searchbar {
+      > revealer > box {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    actionbar {
+      > revealer > box {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    menubar {
+      background: none;
+      box-shadow: none;
+      border: none;
+    }
+
+    .collapse-spacing {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &.raised {
+      background-color: $titlebar;
+      color: $titlebar-text;
+
+      &:backdrop {
+        background-color: $titlebar-backdrop;
+      }
+    }
+
+    &:backdrop > windowhandle {
+      filter: opacity(.5);
+    }
   }
-}
 
-.bottom-bar {
-  actionbar > revealer > box {
-    background: none;
-    border: none;
-    box-shadow: none;
+  > .top-bar.raised {
+    box-shadow: 0 1px $border;
+
+    &.border {
+      box-shadow: 0 1px $border;
+    }
+  }
+
+  > .bottom-bar.raised {
+    box-shadow: 0 -1px $border;
+
+    &.border {
+      box-shadow: 0 -1px $border;
+    }
+  }
+
+  &.undershoot-top scrolledwindow {
+    @include undershoot(top);
+  }
+
+  &.undershoot-bottom scrolledwindow {
+    @include undershoot(bottom);
   }
 }
 
 floating-sheet {
   > sheet.background {
     border-radius: $window-radius;
-    box-shadow: $shadow-z16,
-                inset 0 1px highlight($titlebar, topbar);
+    box-shadow: $shadow-z16, inset 0 1px highlight($titlebar, topbar);
   }
 }
 
 // ThemeSelector
 themeselector, // Gnome text editor
-panelthemeselector { // Gnome builder
+
+panelthemeselector {
+  // Gnome builder
   margin: $space-size * 1.5;
 
   checkbutton {
@@ -579,7 +673,8 @@ panelthemeselector { // Gnome builder
   }
 }
 
-themeswitcher { // Gnome console
+themeswitcher {
+  // Gnome console
   padding: $space-size;
 
   .check {
