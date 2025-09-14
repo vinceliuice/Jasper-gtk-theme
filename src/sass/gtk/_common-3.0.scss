@@ -3961,12 +3961,12 @@ stackswitcher {
  *************/
 // Outline for low res icons
 .lowres-icon {
-  -gtk-icon-shadow: $shadow-z3;
+  -gtk-icon-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-// Drapshadow for large icons
+// Dropshadow for large icons
 .icon-dropshadow {
-  -gtk-icon-shadow: $shadow-z5;
+  -gtk-icon-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 }
 
 
