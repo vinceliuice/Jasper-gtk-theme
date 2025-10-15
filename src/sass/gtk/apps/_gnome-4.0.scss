@@ -2,8 +2,8 @@
 // Nautilus
 //
 
-$nautilus: if($variant == 'light', $base, $fill);
-$nautilus-sidebar: if($topbar == 'light', $base, on($titlebar, fill));
+$nautilus: if($variant =='light', $base, $fill);
+$nautilus-sidebar: if($topbar =='light', $base, on($titlebar, fill));
 $nautilus-item-radius: $window-radius - $space-size;
 
 .nautilus-window {
@@ -75,7 +75,9 @@ $nautilus-item-radius: $window-radius - $space-size;
         background-color: $nautilus-sidebar;
         box-shadow: 0 2px 3px rgba(black, 0.08), inset 0 1px highlight($titlebar);
 
-        &, undershoot { border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius; }
+        &, undershoot {
+          border-radius: $nautilus-item-radius $nautilus-item-radius / 2 $nautilus-item-radius / 2 $nautilus-item-radius;
+        }
 
         > viewport > list.navigation-sidebar {
           background: none;
@@ -84,7 +86,7 @@ $nautilus-item-radius: $window-radius - $space-size;
           > row {
             border-radius: $nautilus-item-radius - $space-size;
 
-            @if $topbar == 'dark' {
+            @if $topbar =='dark' {
               &:selected {
                 box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
               }
@@ -101,7 +103,9 @@ $nautilus-item-radius: $window-radius - $space-size;
             }
           }
 
-          > separator { background: none; }
+          > separator {
+            background: none;
+          }
         }
       }
 
@@ -114,11 +118,17 @@ $nautilus-item-radius: $window-radius - $space-size;
           > slider {
             background-color: $titlebar-text-disabled;
 
-            &:hover { background-color: $titlebar-text-disabled; }
+            &:hover {
+              background-color: $titlebar-text-disabled;
+            }
 
-            &:active { background-color: $titlebar-text-secondary; }
+            &:active {
+              background-color: $titlebar-text-secondary;
+            }
 
-            &:disabled { background-color: $titlebar-text-secondary-disabled; }
+            &:disabled {
+              background-color: $titlebar-text-secondary-disabled;
+            }
           }
         }
       }
@@ -126,7 +136,9 @@ $nautilus-item-radius: $window-radius - $space-size;
   }
 
   placesview {
-    label { color: $text-secondary; }
+    label {
+      color: $text-secondary;
+    }
 
     list, .toolbar {
       background-color: transparent;
@@ -151,6 +163,7 @@ $nautilus-item-radius: $window-radius - $space-size;
   }
 
   .nautilus-grid-view {
+
     gridview.view,
     statuspage.view {
       background-color: transparent;
@@ -158,9 +171,9 @@ $nautilus-item-radius: $window-radius - $space-size;
 
     child.activatable {
       transition: $transition,
-      background-size $ripple-fade-out-duration $ease-out,
-      background-image $ripple-fade-out-opacity-duration $ease-out,
-      font-weight 0;
+        background-size $ripple-fade-out-duration $ease-out,
+        background-image $ripple-fade-out-opacity-duration $ease-out,
+        font-weight 0;
       outline: none;
       box-shadow: none;
       background-color: transparent;
@@ -178,9 +191,9 @@ $nautilus-item-radius: $window-radius - $space-size;
 
       &:active {
         transition: $transition,
-        background-size 0ms,
-        background-image 0ms,
-        font-weight 0ms;
+          background-size 0ms,
+          background-image 0ms,
+          font-weight 0ms;
         animation: ripple $ripple-fade-in-duration $ease-out forwards;
         background-image: radial-gradient(circle, $overlay-normal 10%, transparent 0%);
         background-size: 0% 0%;
@@ -243,7 +256,7 @@ $nautilus-item-radius: $window-radius - $space-size;
       background-color: transparent;
       box-shadow: none;
       padding: 0;
-  
+
       &:backdrop {
         background-color: transparent;
         box-shadow: none;
@@ -266,14 +279,18 @@ $nautilus-item-radius: $window-radius - $space-size;
           color: $titlebar-text;
         }
 
-        &:disabled { color: $titlebar-text-secondary-disabled; }
+        &:disabled {
+          color: $titlebar-text-secondary-disabled;
+        }
 
         &:checked, &:selected {
-          background-color: if($topbar == 'light', rgba($base, 1), rgba(white, 0.15));
+          background-color: if($topbar =='light', rgba($base, 1), rgba(white, 0.15));
           color: $titlebar-text;
           box-shadow: 0 1px 3px rgba(black, 0.1), inset 0 1px highlight($titlebar);
 
-          &:disabled { color: $titlebar-text-disabled; }
+          &:disabled {
+            color: $titlebar-text-disabled;
+          }
         }
 
         button.tab-close-button {
@@ -340,7 +357,7 @@ $nautilus-item-radius: $window-radius - $space-size;
     border-radius: $corner-radius - $space-size / 2;
 
     &:hover {
-      background-color: if($variant == 'light' and $topbar == 'light', white, rgba(white, 0.15));
+      background-color: if($variant =='light' and $topbar =='light', white, rgba(white, 0.15));
       box-shadow: 0 1px 3px rgba(black, 0.06), inset 0 1px highlight($titlebar);
     }
 
@@ -411,10 +428,27 @@ $nautilus-item-radius: $window-radius - $space-size;
   border-radius: $corner-radius - $space-size / 2;
 }
 
-#NautilusViewCell {
-  clamp box {
-    margin: 0;
-    border-spacing: 0;
+.nautilus-grid-view {
+  child.activatable {
+    padding: 0;
+
+    #NautilusViewCell {
+      padding: 0;
+
+      clamp box {
+        margin: 0;
+        border-spacing: 0;
+      }
+
+      .icon-ui-labels-box {
+        margin: 0 0 $space-size * 2;
+        border-spacing: 0;
+      }
+
+      .dim-label {
+        border-spacing: 0;
+      }
+    }
   }
 }
 
@@ -422,10 +456,10 @@ $nautilus-item-radius: $window-radius - $space-size;
   border-radius: $circular-radius;
 
   > button {
-   margin: 0;
-   padding: 0;
-   min-height: 24px;
-   min-width: 24px;
+    margin: 0;
+    padding: 0;
+    min-height: 24px;
+    min-width: 24px;
   }
 }
 
@@ -439,7 +473,9 @@ navigation-view-page > toolbarview > scrolledwindow > viewport > clamp {
 // Calculator
 //
 
-.history-view { background-color: $base; }
+.history-view {
+  background-color: $base;
+}
 
 #displayitem {
   border-top: 1px solid $border;
@@ -645,14 +681,17 @@ button:checked:not(:backdrop) .calendar-color-image,
 
 // month/year controls
 datechooser {
-  navigator { // add some space between the two controls
+  navigator {
+    // add some space between the two controls
     margin-right: $space-size;
     margin-left: $space-size;
     margin-bottom: $space-size;
   }
 
   navigator {
-    label { font-weight: bold; }
+    label {
+      font-weight: bold;
+    }
 
     button, button.image-button {
       min-height: $medium-size;
@@ -689,27 +728,36 @@ datechooser {
       color: on($primary);
       font-weight: bold;
 
-      dot { background-color: on($primary); }
+      dot {
+        background-color: on($primary);
+      }
     }
 
     &.today {
       color: $primary;
 
-      dot { background-color: $primary; }
+      dot {
+        background-color: $primary;
+      }
     }
 
     &.other-month {
+
       &:not(:hover),
       &:backdrop {
         color: gtkalpha(currentColor, 0.1);
 
-        dot { background-color: gtkalpha(currentColor, 0.1); }
+        dot {
+          background-color: gtkalpha(currentColor, 0.1);
+        }
       }
 
       &:hover:not(:backdrop) {
         color: $text-disabled;
 
-        dot { background-color: $text-disabled; }
+        dot {
+          background-color: $text-disabled;
+        }
       }
     }
   }
@@ -783,10 +831,14 @@ monthcell {
       background-color: gtkalpha($primary, 0.2);
     }
 
-    label.day-label { font-weight: bold; }
+    label.day-label {
+      font-weight: bold;
+    }
   }
 
-  &:nth-child(7n + 1) { border-left-width: 0; }
+  &:nth-child(7n + 1) {
+    border-left-width: 0;
+  }
 
   &.today {
     background-color: gtkalpha($primary, 0.2);
@@ -848,7 +900,9 @@ monthpopover > box {
 
 // Agenda View CSS
 agenda-view list {
-  &.background { background-color: transparent; }
+  &.background {
+    background-color: transparent;
+  }
 
   > row {
     padding: 2px $space-size * 2;
@@ -1070,11 +1124,12 @@ screenshot-carousel {
 }
 
 .category-tile.category-work {
-  padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+  padding: 1px;
+  /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
   color: #1c71d8;
-  background-color:#fdf8d7;
+  background-color: #fdf8d7;
   background-image: linear-gradient($border 1px, transparent 1px),
-                    linear-gradient(90deg, $border 1px, transparent 1px);
+    linear-gradient(90deg, $border 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
   background-position: -1px -4px, center -1px;
   background-repeat: repeat;
@@ -1082,7 +1137,7 @@ screenshot-carousel {
   &:hover {
     background-color: lighten(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-                      linear-gradient(90deg, $border 1px, transparent 1px);
+      linear-gradient(90deg, $border 1px, transparent 1px);
     background-size: 10px 10px, 10px 10px;
     background-position: -1px -4px, center -1px;
     background-repeat: repeat;
@@ -1091,7 +1146,7 @@ screenshot-carousel {
   &:active {
     background-color: darken(#fdf8d7, 5%);
     background-image: linear-gradient($border 1px, transparent 1px),
-                      linear-gradient(90deg, $border 1px, transparent 1px);
+      linear-gradient(90deg, $border 1px, transparent 1px);
     background-size: 10px 10px, 10px 10px;
     background-position: -1px -4px, center -1px;
     background-repeat: repeat;
@@ -1102,14 +1157,16 @@ screenshot-carousel {
 // Gnome control center
 //
 
-window > contents > leaflet { // Gnome control center
+window > contents > leaflet {
+
+  // Gnome control center
   > box > stack.background {
     background-color: transparent;
     background-image: linear-gradient(to bottom,
-                                      transparent,
-                                      transparent $large-size,
-                                      $background $large-size,
-                                      $background);
+        transparent,
+        transparent $large-size,
+        $background $large-size,
+        $background);
   }
 }
 
@@ -1127,7 +1184,9 @@ headerbar splitbutton {
 }
 
 popover.background.global-search {
-  > arrow, > contents { padding: 0; }
+  > arrow, > contents {
+    padding: 0;
+  }
 }
 
 panelframeswitcher {
@@ -1167,6 +1226,7 @@ panelframeswitcher {
 }
 
 panelstatusbar {
+
   > menubutton > button,
   > paneltogglebutton button {
     border-radius: 0;
@@ -1354,7 +1414,9 @@ window.dialog {
       border-radius: 0;
 
       > row {
-        &:first-child, &:last-child { border-radius: 0; }
+        &:first-child, &:last-child {
+          border-radius: 0;
+        }
       }
     }
   }
@@ -1362,6 +1424,7 @@ window.dialog {
 
 window.aboutdialog {
   stack scrolledwindow.frame {
+
     &,
     & > .view,
     & > .view > text {
@@ -1371,5 +1434,49 @@ window.aboutdialog {
 
   .large-icons {
     -gtk-icon-size: 128px;
+  }
+}
+
+//
+// Chromium
+//
+
+window.background.chromium {
+  background-color: $background;
+  color: $text;
+
+  &:backdrop {
+    background-color: gtkmix($text, $background, 10%);
+  }
+
+  headerbar.header-bar.titlebar {
+    padding: 0 $space-size * 2;
+    background-color: $titlebar;
+    color: $titlebar-text;
+    box-shadow: inset 0 1px rgba(white, 0.1);
+    border-radius: $window-radius $window-border 0 0;
+
+    &:backdrop {
+      background-color: gtkmix($titlebar-text, $titlebar, 6%);
+      color: $titlebar-text-disabled;
+    }
+
+    button.titlebutton {
+      color: $titlebar-text;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px 16px;
+      min-height: 16px;
+      min-width: 16px;
+      padding: 3px;
+
+      &.maximize {
+        background-image: -gtk-recolor(url("assets/scalable/maximize@2.svg"));
+      }
+
+      &.close {
+        background-image: -gtk-recolor(url("assets/scalable/close@2.svg"));
+      }
+    }
   }
 }
