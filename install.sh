@@ -78,6 +78,8 @@ OPTIONS:
 
   -l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
 
+  --no-gtk2               Skip the GTK2 theme (it needs gtk-engine-murrine)
+
   -r, --remove,
   -u, --uninstall         Uninstall/Remove installed themes
 
@@ -139,10 +141,12 @@ install() {
   ln -s assets/process-working.svg process-working.svg
   ln -s assets/no-notifications.svg no-notifications.svg
 
-  mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/main/gtk-2.0/common/"*'.rc'                                              "${THEME_DIR}/gtk-2.0"
-  cp -r "${SRC_DIR}/assets/gtk-2.0/assets-common${ELSE_DARK:-}"                              "${THEME_DIR}/gtk-2.0/assets"
-  cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}${ctype}/"*"png"              "${THEME_DIR}/gtk-2.0/assets"
+  if [[ "${no_gtk2}" != 'true' ]]; then
+    mkdir -p                                                                                   "${THEME_DIR}/gtk-2.0"
+    cp -r "${SRC_DIR}/main/gtk-2.0/common/"*'.rc'                                              "${THEME_DIR}/gtk-2.0"
+    cp -r "${SRC_DIR}/assets/gtk-2.0/assets-common${ELSE_DARK:-}"                              "${THEME_DIR}/gtk-2.0/assets"
+    cp -r "${SRC_DIR}/assets/gtk-2.0/assets${theme}${ELSE_DARK:-}${ctype}/"*"png"              "${THEME_DIR}/gtk-2.0/assets"
+  fi
 
   mkdir -p                                                                                   "${THEME_DIR}/gtk-3.0"
   cp -r "${SRC_DIR}/assets/gtk/assets${theme}${ctype}"                                       "${THEME_DIR}/gtk-3.0/assets"
@@ -211,6 +215,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     -l|--libadwaita)
       libadwaita="true"
+      shift
+      ;;
+    --no-gtk2)
+      no_gtk2="true"
       shift
       ;;
     -c|--color)
@@ -602,7 +610,9 @@ install_theme() {
     for color in "${colors[@]}"; do
       for size in "${sizes[@]}"; do
         install "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
-        make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        if [[ "${no_gtk2}" != 'true' ]]; then
+          make_gtkrc "${dest:-$DEST_DIR}" "${_name:-$THEME_NAME}" "$theme" "$color" "$size" "$ctype" "$window"
+        fi
       done
     done
   done
